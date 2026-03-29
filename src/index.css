@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --theme-luxury-black: #0A0A0A;
+  --theme-luxury-charcoal: #1A1A1A;
+  --theme-luxury-charcoal-light: #2A2A2A;
+  --theme-luxury-beige: #D4C5B0;
+  --theme-luxury-beige-light: #E8DCC8;
+  --theme-luxury-off-white: #F5F1ED;
+  --theme-luxury-cream: #FAF8F5;
+  --theme-luxury-gold: #C9A961;
+  --theme-luxury-gold-light: #D4B976;
+  --theme-white: #ffffff;
+  --theme-black: #000000;
+  --theme-pure-white: #ffffff;
+  --theme-pure-black: #000000;
+}
+
+:root.light {
+  --theme-luxury-black: #F5F1ED;
+  --theme-luxury-charcoal: #EAE6DF;
+  --theme-luxury-charcoal-light: #D4C5B0;
+  --theme-luxury-beige: #2A2A2A;
+  --theme-luxury-beige-light: #1A1A1A;
+  --theme-luxury-off-white: #0A0A0A;
+  --theme-luxury-cream: #FFFFFF;
+  --theme-luxury-gold: #AB8841;
+  --theme-luxury-gold-light: #C19E5A;
+  --theme-white: #0A0A0A;
+  --theme-black: #F5F1ED;
+  --theme-pure-white: #ffffff;
+  --theme-pure-black: #000000;
+}
+
+@theme {
+  --color-luxury-black: var(--theme-luxury-black);
+  --color-luxury-charcoal: var(--theme-luxury-charcoal);
+  --color-luxury-charcoal-light: var(--theme-luxury-charcoal-light);
+  --color-luxury-beige: var(--theme-luxury-beige);
+  --color-luxury-beige-light: var(--theme-luxury-beige-light);
+  --color-luxury-off-white: var(--theme-luxury-off-white);
+  --color-luxury-cream: var(--theme-luxury-cream);
+  --color-luxury-gold: var(--theme-luxury-gold);
+  --color-luxury-gold-light: var(--theme-luxury-gold-light);
+
+  --color-white: var(--theme-white);
+  --color-black: var(--theme-black);
+  --color-pure-white: var(--theme-pure-white);
+  --color-pure-black: var(--theme-pure-black);
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --font-size-display-xl: 5rem;
+  --font-size-display-xl--line-height: 1.1;
+  --font-size-display-xl--letter-spacing: -0.02em;
+
+  --font-size-display-lg: 4rem;
+  --font-size-display-lg--line-height: 1.1;
+  --font-size-display-lg--letter-spacing: -0.02em;
+
+  --font-size-display-md: 3rem;
+  --font-size-display-md--line-height: 1.2;
+  --font-size-display-md--letter-spacing: -0.01em;
+
+  --font-size-display-sm: 2.25rem;
+  --font-size-display-sm--line-height: 1.2;
+  --font-size-display-sm--letter-spacing: -0.01em;
+
+  --duration-400: 400ms;
+  --duration-600: 600ms;
+  --duration-800: 800ms;
+
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-luxury: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-luxury-charcoal;
+  }
+
+  @media (min-width: 1024px) {
+    * {
+      cursor: none !important;
+    }
+
+    a,
+    button,
+    [data-cursor-text] {
+      cursor: none !important;
+    }
+  }
+
+  html {
+    scroll-behavior: initial;
+    scroll-padding-top: 100px;
+    /* Offset for fixed navbar */
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  body {
+    @apply bg-luxury-black text-luxury-off-white font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-medium;
+  }
+
+  h1 {
+    font-size: var(--font-size-display-lg);
+    line-height: var(--font-size-display-lg--line-height);
+    letter-spacing: var(--font-size-display-lg--letter-spacing);
+    @apply font-display font-medium;
+  }
+
+  h2 {
+    font-size: var(--font-size-display-md);
+    line-height: var(--font-size-display-md--line-height);
+    letter-spacing: var(--font-size-display-md--letter-spacing);
+    @apply font-display font-medium;
+  }
+
+  h3 {
+    font-size: var(--font-size-display-sm);
+    line-height: var(--font-size-display-sm--line-height);
+    letter-spacing: var(--font-size-display-sm--letter-spacing);
+    @apply font-display font-medium;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: var(--spacing-30);
+      padding-bottom: var(--spacing-30);
+      padding-inline-start: 3rem;
+      padding-inline-end: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-inline-start: 5rem;
+      padding-inline-end: 5rem;
+    }
+  }
+
+  .container-luxury {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(to right, var(--color-luxury-gold), var(--color-luxury-gold-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  [dir="rtl"] .text-gradient-gold {
+    background-image: linear-gradient(to left, var(--color-luxury-gold), var(--color-luxury-gold-light));
+  }
+
+  .transition-luxury {
+    transition-property: all;
+    transition-timing-function: var(--ease-luxury);
+    transition-duration: var(--duration-600);
+  }
+
+  .hover-lift {
+    transition-property: all;
+    transition-timing-function: var(--ease-luxury);
+    transition-duration: var(--duration-600);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-0.25rem);
+    @apply shadow-2xl shadow-pure-black/10;
+  }
+
+  .divider-luxury {
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--color-luxury-beige), transparent);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Luxury Map Styles */
+.leaflet-container {
+  background: var(--theme-luxury-black) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--theme-luxury-black) !important;
+  color: var(--theme-luxury-off-white) !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(201, 169, 97, 0.3) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(201, 169, 97, 0.3) !important;
+}
+
+.leaflet-control-attribution {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.1) !important;
+  font-size: 8px !important;
+}
+
+.custom-luxury-marker {
+  background: none !important;
+  border: none !important;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
