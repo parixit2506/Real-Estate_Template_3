@@ -12,7 +12,7 @@ export const properties = [
             "lng": -118.7798
         },
         "price": "$12,500,000",
-        "image": "/assets/property1.jpg",
+        "image": "/properties/property1.jpg",
         "sqft": "8,500",
         "beds": 6,
         "baths": 7,
@@ -39,9 +39,9 @@ export const properties = [
         "parking": "4-car garage",
         "lotSize": "2.5 acres",
         "gallery": [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p1/property_gallery_i1.png",
+            "/properties/gallery/p1/property_gallery_i2.png",
+            "/properties/gallery/p1/property_gallery_i3.png"
         ]
     },
     {
@@ -57,7 +57,7 @@ export const properties = [
             "lng": -73.9712
         },
         "price": "$18,900,000",
-        "image": "/assets/property2.jpg",
+        "image": "/properties/property2.jpg",
         "sqft": "5,200",
         "beds": 4,
         "baths": 4.5,
@@ -84,9 +84,9 @@ export const properties = [
         "parking": "2 spaces",
         "lotSize": "N/A",
         "gallery": [
-            "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?q=80&w=2071&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop"
+            "/properties/gallery/p2/property_gallery_i1.png",
+            "/properties/gallery/p2/property_gallery_i2.png",
+            "/properties/gallery/p2/property_gallery_i3.png"
         ]
     },
     {
@@ -102,7 +102,7 @@ export const properties = [
             "lng": -80.1300
         },
         "price": "$9,750,000",
-        "image": "/assets/property3.jpg",
+        "image": "/properties/property3.jpg",
         "sqft": "6,800",
         "beds": 5,
         "baths": 6,
@@ -129,9 +129,9 @@ export const properties = [
         "parking": "3-car garage",
         "lotSize": "1.2 acres",
         "gallery": [
-            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p3/property_gallery_i1.png",
+            "/properties/gallery/p3/property_gallery_i2.png",
+            "/properties/gallery/p3/property_gallery_i3.png"
         ]
     },
     {
@@ -147,7 +147,7 @@ export const properties = [
             "lng": -106.8175
         },
         "price": "$15,200,000",
-        "image": "/assets/property4.jpg",
+        "image": "/properties/property4.jpg",
         "sqft": "12,000",
         "beds": 8,
         "baths": 9,
@@ -174,9 +174,9 @@ export const properties = [
         "parking": "2-car heated garage",
         "lotSize": "3.0 acres",
         "gallery": [
-            "https://images.unsplash.com/photo-1449156733864-dd5471bb7427?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p4/property_gallery_i1.png",
+            "/properties/gallery/p4/property_gallery_i2.png",
+            "/properties/gallery/p4/property_gallery_i3.png"
         ]
     },
     {
@@ -192,7 +192,7 @@ export const properties = [
             "lng": -73.9442
         },
         "price": "$6,850,000",
-        "image": "/assets/property5.jpg",
+        "image": "/properties/property5.jpg",
         "sqft": "3,400",
         "beds": 3,
         "baths": 3,
@@ -219,9 +219,9 @@ export const properties = [
         "parking": "1 space",
         "lotSize": "N/A",
         "gallery": [
-            "https://images.unsplash.com/photo-1560448204-61dc36dc98c8?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p5/property_gallery_i1.png",
+            "/properties/gallery/p5/property_gallery_i2.png",
+            "/properties/gallery/p5/property_gallery_i3.png"
         ]
     },
     {
@@ -237,7 +237,7 @@ export const properties = [
             "lng": -118.2437
         },
         "price": "$11,400,000",
-        "image": "/assets/property6.jpg",
+        "image": "/properties/property6.jpg",
         "sqft": "7,200",
         "beds": 5,
         "baths": 6,
@@ -264,9 +264,9 @@ export const properties = [
         "parking": "3-car garage",
         "lotSize": "2.0 acres",
         "gallery": [
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=2074&auto=format&fit=crop"
+            "/properties/gallery/p6/property_gallery_i1.png",
+            "/properties/gallery/p6/property_gallery_i2.png",
+            "/properties/gallery/p6/property_gallery_i3.png"
         ]
     },
     {
@@ -282,7 +282,7 @@ export const properties = [
             "lng": 18.9553
         },
         "price": "$8,200,000",
-        "image": "/assets/villa_norway_exterior_1769172487711.png",
+        "image": "/properties/property7.png",
         "sqft": "4,800",
         "beds": 4,
         "baths": 4,
@@ -309,9 +309,9 @@ export const properties = [
         "parking": "Garage",
         "lotSize": "1.5 acres",
         "gallery": [
-            "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p7/property_gallery_i1.png",
+            "/properties/gallery/p7/property_gallery_i2.png",
+            "/properties/gallery/p7/property_gallery_i3.png"
         ]
     },
     {
@@ -327,7 +327,7 @@ export const properties = [
             "lng": -4.8824
         },
         "price": "$14,500,000",
-        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+        "image": "/properties/property8.png",
         "sqft": "10,500",
         "beds": 7,
         "baths": 8,
@@ -354,9 +354,9 @@ export const properties = [
         "parking": "5-car garage",
         "lotSize": "4.0 acres",
         "gallery": [
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p8/property_gallery_i1.png",
+            "/properties/gallery/p8/property_gallery_i2.png",
+            "/properties/gallery/p8/property_gallery_i3.png"
         ]
     },
     {
@@ -372,7 +372,7 @@ export const properties = [
             "lng": 7.7491
         },
         "price": "$22,000,000",
-        "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop",
+        "image": "/properties/property9.png",
         "sqft": "9,200",
         "beds": 6,
         "baths": 7,
@@ -399,9 +399,9 @@ export const properties = [
         "parking": "Underground",
         "lotSize": "N/A",
         "gallery": [
-            "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p8/property_gallery_i1.png",
+            "/properties/gallery/p8/property_gallery_i2.png",
+            "/properties/gallery/p8/property_gallery_i3.png"
         ]
     },
     {
@@ -417,7 +417,7 @@ export const properties = [
             "lng": -116.5453
         },
         "price": "$7,900,000",
-        "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2080&auto=format&fit=crop",
+        "image": "/properties/property10.png",
         "sqft": "6,500",
         "beds": 4,
         "baths": 5,
@@ -444,9 +444,9 @@ export const properties = [
         "parking": "Carport",
         "lotSize": "1.0 acre",
         "gallery": [
-            "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p10/property_gallery_i1.png",
+            "/properties/gallery/p10/property_gallery_i2.png",
+            "/properties/gallery/p10/property_gallery_i3.png"
         ]
     },
     {
@@ -462,7 +462,7 @@ export const properties = [
             "lng": 55.2708
         },
         "price": "$31,000,000",
-        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+        "image": "/properties/property11.png",
         "sqft": "15,000",
         "beds": 5,
         "baths": 6,
@@ -489,9 +489,9 @@ export const properties = [
         "parking": "4 spaces",
         "lotSize": "N/A",
         "gallery": [
-            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p11/property_gallery_i1.png",
+            "/properties/gallery/p11/property_gallery_i2.png",
+            "/properties/gallery/p11/property_gallery_i3.png"
         ]
     },
     {
@@ -507,7 +507,7 @@ export const properties = [
             "lng": 72.9832
         },
         "price": "$16,800,000",
-        "image": "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2070&auto=format&fit=crop",
+        "image": "/properties/property12.png",
         "sqft": "5,500",
         "beds": 3,
         "baths": 4,
@@ -534,9 +534,9 @@ export const properties = [
         "parking": "None",
         "lotSize": "N/A",
         "gallery": [
-            "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+            "/properties/gallery/p12/property_gallery_i1.png",
+            "/properties/gallery/p12/property_gallery_i2.png",
+            "/properties/gallery/p12/property_gallery_i3.png"
         ]
     }
 ]
