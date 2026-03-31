@@ -58,7 +58,7 @@ const About = () => {
           <div className="relative h-[400px] sm:h-[550px] lg:h-[500px] xl:h-[600px] overflow-hidden rounded-sm order-2 lg:order-1 will-change-transform">
             <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform">
               <img
-                src="/assets/property4.jpg" // Reusing mountain estate for dramatic effect
+                src="/properties/property4.jpg" // Reusing mountain estate for dramatic effect
                 alt="Our Heritage"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-luxury duration-800 will-change-[filter]"
               />
