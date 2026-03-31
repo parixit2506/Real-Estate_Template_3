@@ -8,11 +8,11 @@ export const blogs = [
         "author": {
             "name": "Victoria Sterling",
             "role": "Chief Market Analyst",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+            "avatar": "/blogs/blogs-avatar/avatar-1.png"
         },
         "publishedDate": "2026-01-15",
         "category": "Market Insights",
-        "featuredImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop",
+        "featuredImage": "/blogs/featuredImage/blog-1.png",
         "readTime": "6 min read",
         "tags": [
             "Trends",
@@ -29,11 +29,11 @@ export const blogs = [
         "author": {
             "name": "Alexander Chen",
             "role": "Investment Director",
-            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+            "avatar": "/blogs/blogs-avatar/avatar-2.png"
         },
         "publishedDate": "2026-01-10",
         "category": "Investment",
-        "featuredImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop",
+        "featuredImage": "/blogs/featuredImage/blog-2.png",
         "readTime": "8 min read",
         "tags": [
             "Dubai",
@@ -50,11 +50,11 @@ export const blogs = [
         "author": {
             "name": "Isabella Moretti",
             "role": "Architecture Correspondent",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
+            "avatar": "/blogs/blogs-avatar/avatar-3.png"
         },
         "publishedDate": "2026-01-05",
         "category": "Architecture",
-        "featuredImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+        "featuredImage": "/blogs/featuredImage/blog-3.png",
         "readTime": "7 min read",
         "tags": [
             "Architecture",
@@ -71,11 +71,11 @@ export const blogs = [
         "author": {
             "name": "James Worthington",
             "role": "London Market Specialist",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+            "avatar": "/blogs/blogs-avatar/avatar-4.png"
         },
         "publishedDate": "2025-12-28",
         "category": "Market Insights",
-        "featuredImage": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1470&auto=format&fit=crop",
+        "featuredImage": "/blogs/featuredImage/blog-4.png",
         "readTime": "9 min read",
         "tags": [
             "London",
@@ -92,11 +92,11 @@ export const blogs = [
         "author": {
             "name": "Dr. Sophia Laurent",
             "role": "Wellness Design Consultant",
-            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=200&auto=format&fit=crop"
+            "avatar": "/blogs/blogs-avatar/avatar-5.png"
         },
         "publishedDate": "2025-12-20",
         "category": "Design",
-        "featuredImage": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2070&auto=format&fit=crop",
+        "featuredImage": "/blogs/featuredImage/blog-5.png",
         "readTime": "7 min read",
         "tags": [
             "Wellness",
@@ -113,11 +113,11 @@ export const blogs = [
         "author": {
             "name": "Carlos Mendoza",
             "role": "Miami Market Director",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+            "avatar": "/blogs/blogs-avatar/avatar-6.png"
         },
         "publishedDate": "2025-12-15",
         "category": "Investment",
-        "featuredImage": "https://images.unsplash.com/photo-1535498730771-e735b998cd64?q=80&w=1470&auto=format&fit=crop",
+        "featuredImage": "/blogs/featuredImage/blog-6.png",
         "readTime": "8 min read",
         "tags": [
             "Miami",
