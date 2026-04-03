@@ -66,7 +66,7 @@ const PageHero = ({
                     {/* Breadcrumb Layer */}
                     {breadcrumbItems.length > 0 && (
                         <div className="hero-content-node mb-12 flex justify-center">
-                            <Breadcrumb items={breadcrumbItems} />
+                            <Breadcrumb items={breadcrumbItems} variant="light" />
                         </div>
                     )}
 

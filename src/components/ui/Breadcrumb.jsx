@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight, Home } from 'lucide-react'
 
-const Breadcrumb = ({ items }) => {
+const Breadcrumb = ({ items, variant = 'default' }) => {
+    const isLight = variant === 'light'
+    const baseTextColor = isLight ? 'text-pure-white/60' : 'text-luxury-off-white/60'
+    const separatorColor = isLight ? 'text-pure-white/30' : 'text-luxury-off-white/30'
+    const hoverColor = 'hover:text-luxury-gold'
+
     return (
         <nav className="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
             <Link
                 to="/"
-                className="flex items-center gap-1.5 text-pure-white/60 hover:text-luxury-gold transition-colors duration-300 group"
+                className={`flex items-center gap-1.5 ${baseTextColor} ${hoverColor} transition-colors duration-300 group`}
             >
                 <Home size={14} className="group-hover:scale-110 transition-transform duration-300 mb-0.5" />
                 <span className="text-xs uppercase tracking-wider">Home</span>
@@ -17,7 +22,7 @@ const Breadcrumb = ({ items }) => {
 
                 return (
                     <div key={index} className="flex items-center gap-2">
-                        <ChevronRight size={14} className="text-pure-white/30" />
+                        <ChevronRight size={14} className={separatorColor} />
 
                         {isLast ? (
                             <span className="text-luxury-gold text-xs uppercase tracking-wider font-medium">
@@ -26,7 +31,7 @@ const Breadcrumb = ({ items }) => {
                         ) : (
                             <Link
                                 to={item.path}
-                                className="text-pure-white/60 hover:text-luxury-gold transition-colors duration-300 text-xs uppercase tracking-wider"
+                                className={`${baseTextColor} ${hoverColor} transition-colors duration-300 text-xs uppercase tracking-wider`}
                             >
                                 {item.label}
                             </Link>
