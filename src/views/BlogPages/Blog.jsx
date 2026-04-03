@@ -64,7 +64,7 @@ const Blog = () => {
                     title="The Journal"
                     subtitle="Insights & Stories"
                     description="Curated perspectives on luxury real estate, market trends, and the art of exceptional living."
-                    backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                    backgroundImage="/blogs/blog-hero.png"
                     breadcrumbItems={[{ label: 'Blog', path: '/blog' }]}
                 />
 

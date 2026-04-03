@@ -9,7 +9,7 @@ const Contact = () => {
                 title="Get in Touch"
                 subtitle="Contact Us"
                 description="Our team of luxury estate experts is here to assist you with any inquiries regarding our global portfolio."
-                backgroundImage="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=2070&auto=format&fit=crop"
+                backgroundImage="/contact/contact-hero.png"
                 breadcrumbItems={[{ label: 'Contact', path: '/contact' }]}
             />
 

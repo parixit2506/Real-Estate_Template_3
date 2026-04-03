@@ -99,7 +99,7 @@ const Profile = () => {
         email: "alexander@vanguard-estates.com",
         phone: "+44 (0) 20 7946 0123",
         location: "Mayfair, London",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+        avatar: "/profile/profile.png",
         joinDate: "Member since Jan 2024",
         status: "PLATINUM",
         bio: "Specializing in ultra-prime residential acquisitions across the EMEA region. With over a decade of experience in Mayfair and Knightsbridge, I help global investors secure the most exclusive off-market opportunities.",

@@ -106,7 +106,7 @@ const Faq = () => {
           title={<>Frequently Asked <br /> Questions</>}
           subtitle="Help Center"
           description="Everything you need to know about our premium real estate services."
-          backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+          backgroundImage="/faq/faq-hero.png"
           breadcrumbItems={[{ label: 'FAQs', path: '/faq' }]}
         />
 

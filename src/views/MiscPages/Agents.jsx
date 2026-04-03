@@ -69,7 +69,7 @@ const Agents = () => {
                     title="Meet the Agents"
                     subtitle="Our Distinguished Team"
                     description="Our elite team of luxury real estate specialists brings decades of combined experience, unparalleled market knowledge, and a commitment to excellence that defines the LUXE standard."
-                    backgroundImage="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
+                    backgroundImage="/agents/agents-hero.png"
                     breadcrumbItems={[{ label: 'Agents', path: '/agents' }]}
                 />
             </div>

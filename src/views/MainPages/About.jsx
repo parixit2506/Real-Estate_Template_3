@@ -176,22 +176,22 @@ const About = () => {
         {
             name: 'Victoria Sterling',
             role: 'Chief Executive Officer',
-            image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop'
+            image: '/about/about-team-1.png'
         },
         {
             name: 'Alexander Chen',
             role: 'Director of Acquisitions',
-            image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop'
+            image: '/about/about-team-2.png'
         },
         {
             name: 'Isabella Moretti',
             role: 'Head of Architecture',
-            image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop'
+            image: '/about/about-team-3.png'
         },
         {
             name: 'James Worthington',
             role: 'Global Market Specialist',
-            image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop'
+            image: '/about/about-team-4.png'
         }
     ]
 
@@ -203,7 +203,7 @@ const About = () => {
                     title={<>Redefining Luxury <br /> Real Estate</>}
                     subtitle="About Luxe"
                     description="For over two decades, we've been the trusted name in ultra-luxury property acquisition and representation."
-                    backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                    backgroundImage="/about/about-hero.png"
                     breadcrumbItems={[{ label: 'About', path: '/about' }]}
                 />
 
@@ -229,7 +229,7 @@ const About = () => {
                             <div className="relative h-[500px] rounded-sm overflow-hidden will-change-transform">
                                 <div ref={storyImageRef} className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform">
                                     <img
-                                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
+                                        src="/about/about-story.png"
                                         alt="Luxury Property"
                                         className="w-full h-full object-cover"
                                     />
@@ -242,7 +242,7 @@ const About = () => {
                             <div className="relative h-[500px] rounded-sm overflow-hidden order-2 lg:order-1 will-change-transform">
                                 <div ref={missionImageRef} className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform">
                                     <img
-                                        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2070&auto=format&fit=crop"
+                                        src="/about/about-mission.png"
                                         alt="Modern Architecture"
                                         className="w-full h-full object-cover"
                                     />
