@@ -155,7 +155,7 @@ const RepresentationPackages = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} id="representation-packages" className="bg-luxury-black py-16 md:py-24 lg:py-32 relative overflow-hidden select-none">
+        <section ref={sectionRef} id="representation-packages" className="section-padding bg-luxury-black relative overflow-hidden select-none">
 
             {/* Background ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-radial-gradient from-luxury-black via-luxury-black to-pure-black/20 opacity-80 pointer-events-none" />

@@ -160,7 +160,7 @@ const Destinations = () => {
     }, [])
 
     return (
-        <section id="destinations" ref={sectionRef} className="py-20 bg-luxury-black border-y border-luxury-gold/5 overflow-hidden">
+        <section id="destinations" ref={sectionRef} className="section-padding bg-luxury-black border-y border-luxury-gold/5 overflow-hidden">
             <div className="text-center mb-16 md:mb-24 px-4">
                 <span className="text-luxury-gold uppercase tracking-[0.3em] text-sm font-medium mb-4 block">
                     Boundless Horizons

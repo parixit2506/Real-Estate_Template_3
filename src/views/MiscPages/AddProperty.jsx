@@ -87,7 +87,7 @@ const AddProperty = () => {
 
     return (
         <div className="bg-luxury-black min-h-screen text-luxury-off-white">
-            <div className="pt-24 pb-20 md:pt-32 md:pb-40 px-6 md:px-12 lg:px-20 flex justify-center">
+            <div className="pt-24 md:pt-32 section-padding flex justify-center">
                 <div className="max-w-4xl w-full">
 
                     <div ref={headerRef} className="mb-12 md:mb-16">

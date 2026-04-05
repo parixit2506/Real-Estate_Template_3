@@ -209,7 +209,7 @@ const About = () => {
                 />
 
                 {/* Our Story Section */}
-                <div className="about-sections-container py-32 bg-luxury-black">
+                <div className="about-sections-container section-padding bg-luxury-black">
                     <div className="max-w-7xl mx-auto px-4">
 
                         <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-50">
@@ -272,7 +272,7 @@ const About = () => {
                 </div>
 
                 {/* Values Section */}
-                <div className="py-20 bg-luxury-charcoal">
+                <div className="section-padding bg-luxury-charcoal">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center mb-16">
                             <span className="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase mb-6 block">
@@ -302,7 +302,7 @@ const About = () => {
                 </div>
 
                 {/* Team Section */}
-                <div className="py-20 bg-luxury-black">
+                <div className="section-padding bg-luxury-black">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center mb-16">
                             <span className="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase mb-6 block">
@@ -340,7 +340,7 @@ const About = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="py-20 bg-luxury-charcoal">
+                <div className="section-padding bg-luxury-charcoal">
                     <div className="max-w-4xl mx-auto px-4 text-center">
                         <h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 leading-tight">
                             Ready to Begin Your Journey?

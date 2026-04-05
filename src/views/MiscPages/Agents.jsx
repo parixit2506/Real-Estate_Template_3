@@ -115,7 +115,7 @@ const Agents = () => {
             </div>
 
             {/* Agents Grid */}
-            <div className="section-padding py-16 md:py-20 pb-24 md:pb-32">
+            <div className="section-padding">
                 <div className="container-luxury">
                     <div
                         ref={gridRef}
@@ -129,7 +129,7 @@ const Agents = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="section-padding py-16 md:py-24 bg-luxury-charcoal border-y border-luxury-gold/10">
+            <div className="section-padding bg-luxury-charcoal border-y border-luxury-gold/10">
                 <div className="container-luxury text-center">
                     <h2 className="text-3xl md:text-display-md font-display mb-6">
                         Ready to Find Your Dream Estate?

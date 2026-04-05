@@ -159,7 +159,7 @@ const PropertyListing = () => {
     return (
         <div className="bg-luxury-black min-h-screen text-luxury-off-white">
             {/* Minimalist Header */}
-            <div className="pt-24 sm:pt-32 pb-12 sm:pb-16 section-padding border-b border-white/5" ref={headerRef}>
+            <div className="pt-24 sm:pt-32 section-padding border-b border-white/5" ref={headerRef}>
                 <div className="container-luxury">
                     {/* Breadcrumb */}
                     <div className="mb-8">
@@ -210,7 +210,7 @@ const PropertyListing = () => {
             </div>
 
             {/* Content Area */}
-            <div className="section-padding py-12 sm:py-20 lg:py-24 pb-24 sm:pb-32">
+            <div className="section-padding">
                 <div className="container-luxury">
                     {filteredProperties.length > 0 ? (
                         <div className="flex flex-col gap-16 lg:gap-24">
@@ -267,7 +267,7 @@ const PropertyListing = () => {
                             </div>
                         </div>
                     ) : (
-                        <div className="py-20 sm:py-32 text-center">
+                        <div className="section-padding text-center">
                             <h3 className="text-xl sm:text-2xl font-display text-white mb-4 sm:mb-6">No properties match your selection</h3>
                             <p className="text-luxury-beige/40 uppercase tracking-[0.2em] text-[10px] sm:text-xs">Adjust your filters to explore alternative estates</p>
                         </div>

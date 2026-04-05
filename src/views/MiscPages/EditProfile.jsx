@@ -48,7 +48,7 @@ const EditProfile = () => {
 
     return (
         <div className="bg-luxury-black min-h-screen text-luxury-off-white">
-            <div className="pt-24 pb-12 md:pt-40 md:pb-20 lg:pt-32 lg:pb-16 px-6 md:px-12 lg:px-20 flex justify-center">
+            <div className="pt-24 md:pt-32 section-padding flex justify-center">
                 <div className="max-w-4xl lg:max-w-3xl xl:max-w-4xl w-full">
                     {/* Header */}
                     <div ref={headerRef} className="mb-10 lg:mb-12 xl:mb-16">
