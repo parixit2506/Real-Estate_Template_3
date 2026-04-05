@@ -286,7 +286,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                     {/* User Login Icon */}
                     <button
                         onClick={() => navigate('/login')}
-                        className={`hover:text-luxury-gold transition-colors duration-300 group relative ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
+                        className={`hover:text-luxury-gold transition-colors duration-300 group relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
                         aria-label="Login"
                     >
                         <User size={18} className="sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
@@ -298,7 +298,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                     {/* Theme Toggle Icon */}
                     <button
                         onClick={toggleTheme}
-                        className={`hover:text-luxury-gold transition-colors duration-300 ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
+                        className={`hover:text-luxury-gold transition-colors duration-300 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
                         aria-label="Toggle Theme"
                     >
                         {isDarkMode ? (

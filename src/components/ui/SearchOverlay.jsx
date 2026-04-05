@@ -99,6 +99,7 @@ const SearchOverlay = ({ isOpen, onClose, searchQuery, setSearchQuery }) => {
 					onClick={onClose}
 					className="absolute top-4 right-4 sm:top-10 sm:right-10 group p-4 z-[10002]"
 					title="Close Search"
+					aria-label="Close Search"
 				>
 					<div className="relative w-6 h-6 sm:w-8 h-8 flex justify-center items-center transition-transform duration-500 group-hover:rotate-90">
 						<span className="absolute w-6 sm:w-8 h-[2px] bg-white rotate-45"></span>
@@ -128,6 +129,7 @@ const SearchOverlay = ({ isOpen, onClose, searchQuery, setSearchQuery }) => {
 									}}
 									className="absolute right-0 top-1/2 -translate-y-1/2 text-white/40 hover:text-luxury-gold transition-colors p-2"
 									title="Clear Search"
+									aria-label="Clear Search"
 								>
 									<X size={20} className="sm:size-6" />
 								</button>

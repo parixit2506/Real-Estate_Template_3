@@ -294,14 +294,15 @@ const Destinations = () => {
                             <button
                                 onClick={() => scroll('left')}
                                 disabled={!canScrollLeft}
-                                className={`hidden lg:flex p-3 rounded-full border border-luxury-gold/20 transition-all duration-300 ${canScrollLeft ? 'opacity-100 hover:bg-luxury-gold hover:text-pure-black cursor-pointer' : 'opacity-30 cursor-not-allowed'} text-luxury-gold`}
+                                className={`hidden lg:flex p-3.5 rounded-full border border-luxury-gold/20 transition-all duration-300 ${canScrollLeft ? 'opacity-100 hover:bg-luxury-gold hover:text-pure-black cursor-pointer' : 'opacity-30 cursor-not-allowed'} text-luxury-gold`}
+                                aria-label="Previous Destinations"
                             >
                                 <ChevronLeft size={20} />
                             </button>
                         )}
 
                         <div className="flex flex-col items-center gap-3">
-                            <span className="text-[10px] text-luxury-gold tracking-[0.2em] uppercase opacity-60">
+                            <span className="text-[10px] text-luxury-gold tracking-[0.2em] uppercase opacity-80">
                                 {destinations.length > 8 ? 'Scroll to Explore More' : 'Swipe to Explore'}
                             </span>
                             <div className="w-32 sm:w-48 h-[2px] bg-white/10 relative overflow-hidden">
@@ -317,7 +318,8 @@ const Destinations = () => {
                             <button
                                 onClick={() => scroll('right')}
                                 disabled={!canScrollRight}
-                                className={`hidden lg:flex p-3 rounded-full border border-luxury-gold/20 transition-all duration-300 ${canScrollRight ? 'opacity-100 hover:bg-luxury-gold hover:text-pure-black cursor-pointer' : 'opacity-30 cursor-not-allowed'} text-luxury-gold`}
+                                className={`hidden lg:flex p-3.5 rounded-full border border-luxury-gold/20 transition-all duration-300 ${canScrollRight ? 'opacity-100 hover:bg-luxury-gold hover:text-pure-black cursor-pointer' : 'opacity-30 cursor-not-allowed'} text-luxury-gold`}
+                                aria-label="Next Destinations"
                             >
                                 <ChevronRight size={20} />
                             </button>

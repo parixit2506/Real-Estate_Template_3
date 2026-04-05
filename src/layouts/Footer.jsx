@@ -62,7 +62,7 @@ const Footer = () => {
                                     key={index}
                                     href={social.href}
                                     aria-label={social.label}
-                                    className="w-10 h-10 rounded-full border border-luxury-charcoal-light flex items-center justify-center text-luxury-beige hover:border-luxury-gold hover:text-luxury-gold hover:bg-luxury-gold/5 transition-luxury group"
+                                    className="w-12 h-12 rounded-full border border-luxury-charcoal-light flex items-center justify-center text-luxury-beige hover:border-luxury-gold hover:text-luxury-gold hover:bg-luxury-gold/5 transition-luxury group"
                                 >
                                     <span className="group-hover:scale-110 transition-transform duration-300">
                                         {social.icon}
@@ -136,7 +136,8 @@ const Footer = () => {
                             />
                             <button
                                 type="submit"
-                                className="absolute right-2 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-luxury-gold-light transition-luxury"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-luxury-gold-light transition-luxury h-10 w-10 flex items-center justify-center"
+                                aria-label="Subscribe to newsletter"
                             >
                                 <ArrowRight size={20} />
                             </button>
@@ -148,7 +149,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
                     <div className="order-2 md:order-1">
-                        <p className="text-luxury-beige-light/60 text-[10px] uppercase tracking-[0.25em] font-medium text-center md:text-left transition-luxury hover:text-luxury-beige-light">
+                        <p className="text-luxury-beige-light/80 text-[10px] uppercase tracking-[0.25em] font-medium text-center md:text-left transition-luxury hover:text-luxury-beige-light">
                             © {currentYear} LUXE Global Real Estate. All Rights Reserved.
                         </p>
                     </div>
@@ -158,7 +159,7 @@ const Footer = () => {
                             <a
                                 key={item}
                                 href="#"
-                                className="text-luxury-beige-light/60 text-[10px] uppercase tracking-[0.2em] hover:text-luxury-gold transition-luxury whitespace-nowrap"
+                                className="text-luxury-beige-light/80 text-[10px] uppercase tracking-[0.2em] hover:text-luxury-gold transition-luxury whitespace-nowrap"
                             >
                                 {item}
                             </a>
