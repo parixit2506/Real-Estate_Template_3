@@ -15,6 +15,7 @@ const PropertyCard = forwardRef(({ property, className = "" }, ref) => {
                     src={property.image}
                     alt={property.title}
                     className="w-full h-full object-cover transition-luxury duration-700 group-hover:scale-110 will-change-transform"
+                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-pure-black/90 via-pure-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-luxury duration-500"></div>
 

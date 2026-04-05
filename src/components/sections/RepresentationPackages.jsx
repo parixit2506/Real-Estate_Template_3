@@ -179,6 +179,7 @@ const RepresentationPackages = () => {
                     <button
                         onClick={() => setBillingCycle(prev => prev === 'monthly' ? 'yearly' : 'monthly')}
                         className="relative w-16 h-8 bg-luxury-charcoal/20 backdrop-blur-md border border-luxury-gold/20 rounded-full p-1 transition-colors duration-300 group hover:bg-luxury-charcoal/30"
+                        aria-label={`Switch to ${billingCycle === 'monthly' ? 'yearly' : 'monthly'} billing cycle`}
                     >
                         <div
                             className={`w-6 h-6 bg-luxury-gold rounded-full shadow-lg shadow-pure-black/40 transition-transform duration-500 ease-luxury ${billingCycle === 'yearly' ? 'translate-x-8' : 'translate-x-0'}`}

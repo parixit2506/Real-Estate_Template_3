@@ -65,7 +65,7 @@ const Contact = () => {
                                     <span className="text-luxury-gold text-xs">A</span>
                                 </div>
                                 <div className="space-y-1.5 lg:space-y-1">
-                                    <h5 className="text-luxury-off-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest">Office</h5>
+                                    <h3 className="text-luxury-off-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest">Office</h3>
                                     <p className="text-luxury-beige-light text-sm sm:text-base lg:text-sm leading-relaxed max-w-[200px] sm:max-w-none">
                                         789 Luxury Avenue, Mayfair<br />London, W1K 3AU, UK
                                     </p>
@@ -77,7 +77,7 @@ const Contact = () => {
                                     <span className="text-luxury-gold text-xs">P</span>
                                 </div>
                                 <div className="space-y-1.5 lg:space-y-1">
-                                    <h5 className="text-luxury-off-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest">Phone</h5>
+                                    <h3 className="text-luxury-off-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest">Phone</h3>
                                     <p className="text-luxury-beige-light text-sm sm:text-base lg:text-sm tracking-wide">
                                         +44 (0) 20 7946 0123
                                     </p>
@@ -89,7 +89,7 @@ const Contact = () => {
                                     <span className="text-luxury-gold text-xs">E</span>
                                 </div>
                                 <div className="space-y-1.5 lg:space-y-1">
-                                    <h5 className="text-luxury-off-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest">Email</h5>
+                                    <h3 className="text-luxury-off-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest">Email</h3>
                                     <p className="text-luxury-beige-light text-sm sm:text-base lg:text-sm tracking-wide lowercase">
                                         concierge@luxe.com
                                     </p>

@@ -224,8 +224,9 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                     >
                         <button
                             onClick={toggleInlineSearch}
-                            className={`flex items-center justify-center min-w-[20px] sm:min-w-[24px] h-full transition-all duration-300 ${isInlineSearchOpen ? 'text-luxury-gold' : 'hover:text-luxury-gold hover:scale-110'
+                            className={`flex items-center justify-center min-w-[40px] sm:min-w-[44px] h-full transition-all duration-300 ${isInlineSearchOpen ? 'text-luxury-gold' : 'hover:text-luxury-gold hover:scale-110'
                                 }`}
+                            aria-label="Toggle Search"
                         >
                             <Search size={18} className="sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
                         </button>
@@ -248,8 +249,9 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                                     searchInputRef.current?.focus()
                                     setSuggestions([])
                                 }}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors p-1 hover:text-luxury-gold text-luxury-off-white/40"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors p-2 hover:text-luxury-gold text-luxury-off-white/40"
                                 title="Clear Search"
+                                aria-label="Clear Search"
                             >
                                 <X size={14} className="sm:size-5" strokeWidth={2} />
                             </button>
@@ -309,7 +311,8 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
 
                     <button
                         onClick={toggleMenu}
-                        className="group flex items-center gap-3 text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase cursor-pointer"
+                        className="group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 cursor-pointer"
+                        aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
                     >
                         {isMenuOpen ? (
                             <div className="relative w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center transition-transform duration-500 group-hover:rotate-90">

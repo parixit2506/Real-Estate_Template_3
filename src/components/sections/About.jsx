@@ -83,9 +83,9 @@ const About = () => {
             </div>
 
             <div className="space-y-3 sm:space-y-4">
-              <h4 className="text-luxury-gold tracking-widest uppercase text-xs font-semibold will-change-[transform,opacity]">
+              <h3 className="text-luxury-gold tracking-widest uppercase text-xs font-semibold will-change-[transform,opacity]">
                 Our Mission
-              </h4>
+              </h3>
               <p className="text-lg sm:text-xl font-display italic text-luxury-off-white leading-relaxed max-w-xl will-change-[transform,opacity]">
                 "To redefine luxury living through architectural excellence and
                 unparalleled service."
