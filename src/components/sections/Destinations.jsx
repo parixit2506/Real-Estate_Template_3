@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useFilters } from '../../context/FilterContext'
@@ -55,6 +56,30 @@ const destinations = [
         region: 'Asia',
         image: '/destinations/Destinations-8.png',
     },
+    {
+        id: 9,
+        name: 'AMSTERDAM',
+        region: 'Netherlands',
+        image: '/destinations/Destinations-1.png',
+    },
+    {
+        id: 10,
+        name: 'FLORENCE',
+        region: 'Italy',
+        image: '/destinations/Destinations-2.png',
+    },
+    {
+        id: 11,
+        name: 'SYDNEY',
+        region: 'Australia',
+        image: '/destinations/Destinations-3.png',
+    },
+    {
+        id: 12,
+        name: 'MALDIVES',
+        region: 'Maldives',
+        image: '/destinations/Destinations-4.png',
+    },
 ]
 
 const Destinations = () => {
@@ -65,27 +90,56 @@ const Destinations = () => {
     const [activeId, setActiveId] = useState(null) // Initially null for smooth entrance
     const [scrollProgress, setScrollProgress] = useState(0)
     const [isReady, setIsReady] = useState(false) // Gate for scroll calculations
+    const [canScrollLeft, setCanScrollLeft] = useState(false)
+    const [canScrollRight, setCanScrollRight] = useState(true)
 
     const handleScroll = (e) => {
         const container = e.target
-        const scrollWidth = container.scrollWidth - container.clientWidth
-        const progress = (container.scrollLeft / scrollWidth) * 100
+        const maxScroll = container.scrollWidth - container.clientWidth
+        const progress = (container.scrollLeft / maxScroll) * 100
         setScrollProgress(progress)
+
+        // Check arrow visibility
+        setCanScrollLeft(container.scrollLeft > 20)
+        setCanScrollRight(container.scrollLeft < maxScroll - 20)
 
         // Only sync activeId after entrance animation is done to avoid jitter
         if (isReady && window.innerWidth < 1024) {
-            const itemWidth = container.scrollWidth / destinations.length
-            const index = Math.round(container.scrollLeft / itemWidth)
-            if (destinations[index] && destinations[index].id !== activeId) {
-                setActiveId(destinations[index].id)
+            const children = Array.from(container.children)
+            const containerCenter = container.scrollLeft + container.clientWidth / 2
+
+            let closestItem = null
+            let minDistance = Infinity
+
+            children.forEach((child, index) => {
+                const itemCenter = child.offsetLeft + child.clientWidth / 2
+                const distance = Math.abs(containerCenter - itemCenter)
+                if (distance < minDistance) {
+                    minDistance = distance
+                    closestItem = destinations[index]
+                }
+            })
+
+            if (closestItem && closestItem.id !== activeId) {
+                setActiveId(closestItem.id)
             }
         }
     }
 
-    const handleCardClick = (destination) => {
+    const scroll = (direction) => {
+        if (carouselRef.current) {
+            const container = carouselRef.current
+            const scrollAmount = window.innerWidth < 1024 ? container.clientWidth * 0.8 : 500
+            container.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            })
+        }
+    }
+
+    const handleCardClick = (destination, target) => {
         if (activeId === destination.id) {
             // Already active, navigate to listing with filter
-            // We clear other filters to ensure the destination properties are shown
             applyFilters({
                 region: 'All',
                 type: 'All',
@@ -100,15 +154,17 @@ const Destinations = () => {
             // Set active
             setActiveId(destination.id)
 
-            // If on mobile/tablet carousel, scroll to the clicked item
-            if (window.innerWidth < 1024 && carouselRef.current) {
-                const index = destinations.findIndex(d => d.id === destination.id)
+            // Calculate precise scroll to center the item
+            if (carouselRef.current && (window.innerWidth < 1024 || destinations.length > 8)) {
                 const container = carouselRef.current
-                const itemWidth = container.scrollWidth / destinations.length
-                container.scrollTo({
-                    left: index * itemWidth,
-                    behavior: 'smooth'
-                })
+                const card = target.closest('.destination-card')
+                if (card) {
+                    const scrollLeft = card.offsetLeft - (container.clientWidth / 2) + (card.clientWidth / 2)
+                    container.scrollTo({
+                        left: scrollLeft,
+                        behavior: 'smooth'
+                    })
+                }
             }
         }
     }
@@ -118,10 +174,9 @@ const Destinations = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top 70%',
+                    start: 'top 80%',
                     toggleActions: 'play none none reverse',
                     onEnter: () => {
-                        // Reset and delay activation every time we enter from top
                         setIsReady(false)
                         setActiveId(null)
                         setTimeout(() => {
@@ -130,7 +185,6 @@ const Destinations = () => {
                         }, 600)
                     },
                     onEnterBack: () => {
-                        // Also trigger when scrolling back up into the section
                         setIsReady(false)
                         setActiveId(null)
                         setTimeout(() => {
@@ -141,56 +195,66 @@ const Destinations = () => {
                 }
             })
 
-            tl.from('.section-title', {
-                y: 50,
+            tl.from('.section-title-fade', {
+                y: 30,
                 opacity: 0,
                 duration: 1,
+                stagger: 0.2,
                 ease: 'power3.out',
             })
                 .from('.destination-card', {
-                    x: 100,
+                    x: 60,
                     autoAlpha: 0,
-                    duration: 1,
-                    stagger: 0.1,
+                    duration: 0.8,
+                    stagger: 0.05,
                     ease: 'power3.out',
                     clearProps: 'all'
-                }, '-=0.8')
+                }, '-=0.6')
         }, sectionRef)
+
+        // Refresh ScrollTrigger to account for dynamic changes
+        ScrollTrigger.refresh()
+
         return () => ctx.revert()
     }, [])
 
     return (
         <section id="destinations" ref={sectionRef} className="section-padding bg-luxury-black border-y border-luxury-gold/5 overflow-hidden">
-            <div className="text-center mb-16 md:mb-24 px-4">
-                <span className="text-luxury-gold uppercase tracking-[0.3em] text-sm font-medium mb-4 block">
-                    Boundless Horizons
-                </span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl text-luxury-off-white">
-                    Curated <span className="text-gradient-gold italic pr-2">Destinations</span>
-                </h2>
+            <div className="section-title-wrap text-center mb-12 md:mb-20 px-4 max-w-4xl mx-auto relative">
+                <div className="mb-0">
+                    <span className="section-title-fade text-luxury-gold uppercase tracking-[0.3em] text-sm font-medium mb-4 block">
+                        Boundless Horizons
+                    </span>
+                    <h2 className="section-title-fade text-4xl md:text-5xl lg:text-6xl text-luxury-off-white">
+                        Curated <span className="text-gradient-gold italic pr-2">Destinations</span>
+                    </h2>
+                </div>
             </div>
 
-            <div className="w-full h-[450px] sm:h-[500px] lg:h-[500px] px-0 md:px-0">
+            <div className="w-full h-[450px] sm:h-[500px] lg:h-[500px] px-0 relative">
                 <div
                     ref={carouselRef}
                     onScroll={handleScroll}
-                    className="flex flex-row lg:flex-row gap-4 lg:gap-1.5 xl:gap-2 h-full w-full max-w-[1800px] mx-auto overflow-x-auto lg:overflow-visible snap-x snap-mandatory scrollbar-hide px-4 lg:px-10 xl:px-20"
+                    className={`flex flex-row gap-10 lg:gap-1.5 xl:gap-2 h-full w-full max-w-[1800px] mx-auto overflow-x-auto snap-x snap-mandatory scrollbar-hide px-0 lg:px-10 xl:px-20 ${destinations.length > 8 ? 'lg:overflow-x-auto' : 'lg:overflow-visible'}`}
                 >
                     {destinations.map((destination) => {
                         const isActive = activeId === destination.id
                         return (
                             <div
                                 key={destination.id}
-                                className={`destination-card relative flex-shrink-0 w-[85vw] sm:w-[90vw] lg:w-auto overflow-hidden rounded-sm cursor-pointer transition-all duration-700 ease-luxury snap-center bg-pure-black shadow-2xl shadow-pure-black/60
-                                    ${isActive ? 'lg:flex-[3.5] h-full opacity-100' : 'lg:flex-1 h-full opacity-70 hover:opacity-100'}
+                                className={`destination-card relative flex-shrink-0 w-full lg:w-auto overflow-hidden rounded-sm cursor-pointer transition-all duration-700 ease-luxury snap-center bg-luxury-black shadow-xl shadow-luxury-black/30
+                                    ${destinations.length > 8
+                                        ? (isActive ? 'lg:flex-[0_0_450px]' : 'lg:flex-[0_0_150px]')
+                                        : (isActive ? 'lg:flex-[3.5]' : 'lg:flex-1')
+                                    } h-full ${isActive ? 'opacity-100' : 'opacity-70 hover:opacity-100'}
                                 `}
-                                onClick={() => handleCardClick(destination)}
+                                onClick={(e) => handleCardClick(destination, e.target)}
                                 onMouseEnter={() => window.innerWidth >= 1024 && setActiveId(destination.id)}
                             >
                                 <img
                                     src={destination.image}
                                     alt={destination.name}
-                                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full lg:w-auto lg:min-w-[35vw] max-w-none object-cover transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-60 hover:opacity-80'}`}
+                                    className={`absolute inset-0 h-full w-full lg:w-[450px] lg:max-w-none object-cover transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-60 hover:opacity-80'}`}
                                     loading="lazy"
                                 />
 
@@ -213,7 +277,7 @@ const Destinations = () => {
 
                                 {/* Numbering always visible */}
                                 <div className={`absolute bottom-4 right-4 sm:bottom-8 sm:right-8 lg:bottom-6 lg:right-6 xl:bottom-10 xl:right-10 text-pure-white font-display text-base md:text-xl xl:text-2xl transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-50'}`}>
-                                    0{destination.id}
+                                    {destination.id < 10 ? `0${destination.id}` : destination.id}
                                 </div>
                             </div>
                         )
@@ -221,17 +285,43 @@ const Destinations = () => {
                 </div>
             </div>
 
-            {/* Scroll Indicator - Tablet & Mobile */}
-            <div className="mt-8 px-4 lg:hidden">
-                <div className="flex flex-col items-center gap-3">
-                    <span className="text-[10px] text-luxury-gold tracking-[0.2em] uppercase opacity-60">
-                        Swipe to Explore
-                    </span>
-                    <div className="w-32 sm:w-48 h-[2px] bg-white/10 relative overflow-hidden">
-                        <div
-                            className="absolute inset-y-0 left-0 bg-luxury-gold transition-all duration-300 ease-out"
-                            style={{ width: `${scrollProgress}%` }}
-                        />
+            {/* Scroll Indicator & Navigation - Tablet & Mobile/Desktop with scroll */}
+            <div className={`mt-12 px-4 ${destinations.length > 8 ? '' : 'lg:hidden'}`}>
+                <div className="flex flex-col items-center gap-6">
+                    <div className="flex items-center gap-8">
+                        {/* Desktop Only Arrows - Left */}
+                        {destinations.length > 8 && (
+                            <button
+                                onClick={() => scroll('left')}
+                                disabled={!canScrollLeft}
+                                className={`hidden lg:flex p-3 rounded-full border border-luxury-gold/20 transition-all duration-300 ${canScrollLeft ? 'opacity-100 hover:bg-luxury-gold hover:text-pure-black cursor-pointer' : 'opacity-30 cursor-not-allowed'} text-luxury-gold`}
+                            >
+                                <ChevronLeft size={20} />
+                            </button>
+                        )}
+
+                        <div className="flex flex-col items-center gap-3">
+                            <span className="text-[10px] text-luxury-gold tracking-[0.2em] uppercase opacity-60">
+                                {destinations.length > 8 ? 'Scroll to Explore More' : 'Swipe to Explore'}
+                            </span>
+                            <div className="w-32 sm:w-48 h-[2px] bg-white/10 relative overflow-hidden">
+                                <div
+                                    className="absolute inset-y-0 left-0 bg-luxury-gold transition-all duration-300 ease-out"
+                                    style={{ width: `${scrollProgress}%` }}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Desktop Only Arrows - Right */}
+                        {destinations.length > 8 && (
+                            <button
+                                onClick={() => scroll('right')}
+                                disabled={!canScrollRight}
+                                className={`hidden lg:flex p-3 rounded-full border border-luxury-gold/20 transition-all duration-300 ${canScrollRight ? 'opacity-100 hover:bg-luxury-gold hover:text-pure-black cursor-pointer' : 'opacity-30 cursor-not-allowed'} text-luxury-gold`}
+                            >
+                                <ChevronRight size={20} />
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

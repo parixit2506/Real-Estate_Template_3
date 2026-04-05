@@ -5,6 +5,7 @@ import PageHero from '../../components/ui/PageHero'
 import AgentCard from '../../components/cards/AgentCard'
 import Contact from '../../components/sections/Contact'
 import { agents as agentsData } from '../../StaticData/agents'
+import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -139,12 +140,12 @@ const Agents = () => {
                         to the world's most prestigious properties.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-luxury-gold text-pure-black font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs transition-all duration-500 hover:bg-luxury-off-white hover:text-luxury-black hover:shadow-2xl hover:shadow-luxury-gold/30">
+                        <Link to="/contact" className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-luxury-gold text-pure-black font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs transition-all duration-500 hover:bg-luxury-off-white hover:text-luxury-black hover:shadow-2xl hover:shadow-luxury-gold/30">
                             Schedule Consultation
-                        </button>
-                        <button className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-transparent border border-luxury-gold text-luxury-gold font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs transition-all duration-500 hover:bg-luxury-gold hover:text-pure-black">
+                        </Link>
+                        <Link to="/listing" className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-transparent border border-luxury-gold text-luxury-gold font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs transition-all duration-500 hover:bg-luxury-gold hover:text-pure-black">
                             View Properties
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
