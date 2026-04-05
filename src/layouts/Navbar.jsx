@@ -199,7 +199,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
         <>
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex justify-between items-center max-w-[2560px] left-1/2 -translate-x-1/2 ${(isScrolled && !isMenuOpen)
                 ? 'px-4 py-3 sm:px-6 sm:py-4 md:px-12 md:py-4 lg:px-12 xl:px-20 bg-luxury-black/90 backdrop-blur-lg text-luxury-off-white shadow-xl shadow-pure-black/10'
-                : `px-4 py-4 sm:px-6 sm:py-6 md:px-12 md:py-8 lg:px-12 lg:py-10 xl:px-20 bg-transparent ${isMenuOpen ? 'text-pure-white' : 'text-pure-white mix-blend-difference'}`
+                : `px-4 py-4 sm:px-6 sm:py-6 md:px-12 md:py-8 lg:px-12 lg:py-10 xl:px-20 bg-transparent ${isMenuOpen ? 'text-pure-white' : 'text-pure-white'}`
                 }`}>
 
                 {/* Left: Logo */}
@@ -214,7 +214,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                 </Link>
 
                 {/* Right: Search & Menu Trigger */}
-                <div className="flex items-center gap-3 sm:gap-4 md:gap-8 transition-all">
+                <div className={`flex items-center gap-3 sm:gap-4 md:gap-8 transition-all ${(!isScrolled && !isMenuOpen) ? 'mix-blend-difference' : ''}`}>
                     <div
                         ref={searchContainerRef}
                         className={`relative flex items-center h-8 sm:h-10 transition-all duration-700 ease-in-out rounded-full ${isInlineSearchOpen || (isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : ''} ${isInlineSearchOpen
