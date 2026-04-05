@@ -83,14 +83,19 @@ const AppRouter = () => {
     const { isRTL } = useLanguage()
     const [isSearchOpen, setIsSearchOpen] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
-    const [hasEntered, setHasEntered] = useState(false)
+    const [hasEntered, setHasEntered] = useState(() => {
+        return sessionStorage.getItem('hasEntered') === 'true'
+    })
 
     // Block scroll until entry
     useEffect(() => {
         if (!hasEntered) {
             document.body.style.overflow = 'hidden'
+            if (window.lenis) window.lenis.stop()
         } else {
             document.body.style.overflow = 'unset'
+            if (window.lenis) window.lenis.start()
+            sessionStorage.setItem('hasEntered', 'true')
             const timeout = setTimeout(() => {
                 ScrollTrigger.refresh()
             }, 500)

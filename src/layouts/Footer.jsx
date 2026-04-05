@@ -15,7 +15,7 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
     const location = useLocation()
     const isHome = location.pathname === '/'
-    const { isDark } = useTheme()
+    const { isDarkMode } = useTheme()
 
     const navLinks = [
         { name: 'Home', href: isHome ? '#home' : '/' },
@@ -45,7 +45,7 @@ const Footer = () => {
                             <Link to="/" className="inline-block group mb-6">
                                 <div className="relative w-40 h-16">
                                     <img
-                                        src={isDark ? "/For Dark Theme.svg" : "/For Light Theme.svg"}
+                                        src={isDarkMode ? "/For Dark Theme.svg" : "/For Light Theme.svg"}
                                         className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
                                         alt="Logo"
                                     />
@@ -78,13 +78,13 @@ const Footer = () => {
                         <ul className="space-y-4">
                             {navLinks.map((link) => (
                                 <li key={link.name}>
-                                    <a
-                                        href={link.href}
+                                    <Link
+                                        to={link.href}
                                         className="text-luxury-beige-light/80 hover:text-luxury-gold transition-luxury text-sm flex items-center group"
                                     >
                                         <span className="w-0 group-hover:w-4 transition-all duration-300 h-[1px] bg-luxury-gold mr-0 group-hover:mr-2 opacity-0 group-hover:opacity-100"></span>
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

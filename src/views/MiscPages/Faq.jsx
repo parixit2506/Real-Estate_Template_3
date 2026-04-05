@@ -178,7 +178,7 @@ const Faq = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-block px-8 py-4 bg-luxury-gold text-pure-black font-semibold text-sm uppercase tracking-widest hover:bg-pure-white transition-all duration-300 shadow-xl shadow-pure-black/5"
+              className="inline-block px-8 py-4 bg-luxury-gold text-pure-black font-semibold text-sm uppercase tracking-widest hover:bg-luxury-off-white hover:text-luxury-black transition-all duration-300 shadow-xl shadow-pure-black/5"
             >
               Contact Support
             </Link>

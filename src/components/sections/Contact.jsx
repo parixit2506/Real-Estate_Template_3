@@ -36,7 +36,7 @@ const Contact = () => {
         <section
             ref={sectionRef}
             id="contact"
-            className="section-padding bg-luxury-charcoal"
+            className="section-padding py-16 md:py-24 bg-luxury-charcoal"
         >
             <div className="container-luxury">
                 {/* Standardized Header */}

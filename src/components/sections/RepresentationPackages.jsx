@@ -264,7 +264,7 @@ const RepresentationPackages = () => {
                                         className={`
                                         w-full py-4 xl:py-5 text-xs tracking-[0.2em] uppercase transition-all duration-500 border
                                         ${pkg.highlight
-                                                ? 'bg-luxury-gold border-luxury-gold text-pure-black hover:bg-pure-white hover:text-pure-black hover:border-pure-white'
+                                                ? 'bg-luxury-gold border-luxury-gold text-pure-black hover:bg-luxury-off-white hover:text-luxury-black hover:border-luxury-off-white'
                                                 : 'border-luxury-gold/30 text-luxury-off-white hover:bg-luxury-gold hover:text-pure-black hover:border-luxury-gold'
                                             }
                                     `}

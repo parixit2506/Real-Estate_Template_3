@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import PageHero from '../../components/ui/PageHero'
@@ -201,7 +202,7 @@ const About = () => {
                 {/* Hero Section */}
                 <PageHero
                     title={<>Redefining Luxury <br /> Real Estate</>}
-                    subtitle="About Luxe"
+                    subtitle="About Aura Properties"
                     description="For over two decades, we've been the trusted name in ultra-luxury property acquisition and representation."
                     backgroundImage="/about/about-hero.png"
                     breadcrumbItems={[{ label: 'About', path: '/about' }]}
@@ -211,7 +212,7 @@ const About = () => {
                 <div className="about-sections-container py-32 bg-luxury-black">
                     <div className="max-w-7xl mx-auto px-4">
 
-                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-64">
+                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-50">
                             <div ref={storyTextRef} className="space-y-6">
                                 <span className="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase block">
                                     Our Story
@@ -220,7 +221,7 @@ const About = () => {
                                     A Legacy of Excellence
                                 </h2>
                                 <p className="text-luxury-beige-light leading-relaxed text-lg">
-                                    Founded in 2002, Luxe Estate emerged from a simple yet powerful vision: to create a real estate experience that matches the sophistication of the properties we represent. What began as a boutique agency in London has evolved into a global network serving discerning clients across six continents.
+                                    Founded in 2002, Aura Properties emerged from a simple yet powerful vision: to create a real estate experience that matches the sophistication of the properties we represent. What began as a boutique agency in London has evolved into a global network serving discerning clients across six continents.
                                 </p>
                                 <p className="text-luxury-beige-light leading-relaxed text-lg">
                                     Our journey has been defined by an unwavering commitment to excellence, discretion, and personalized service. We don't just sell properties; we curate lifestyles, forge lasting relationships, and create opportunities for our clients to own pieces of architectural and cultural significance.
@@ -238,7 +239,7 @@ const About = () => {
                         </div>
 
                         {/* Mission & Vision */}
-                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-40">
+                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="relative h-[500px] rounded-sm overflow-hidden order-2 lg:order-1 will-change-transform">
                                 <div ref={missionImageRef} className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform">
                                     <img
@@ -348,18 +349,18 @@ const About = () => {
                             Let our team of experts guide you to your dream property.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="/contact"
-                                className="px-8 py-4 bg-luxury-gold text-pure-black font-semibold text-sm uppercase tracking-widest hover:bg-pure-white transition-all duration-300 shadow-xl shadow-pure-black/20"
+                            <Link
+                                to="/contact"
+                                className="px-8 py-4 bg-luxury-gold text-pure-black font-semibold text-sm uppercase tracking-widest hover:bg-luxury-off-white hover:text-luxury-black transition-all duration-300 shadow-xl shadow-pure-black/20"
                             >
                                 Contact Us
-                            </a>
-                            <a
-                                href="/listing"
+                            </Link>
+                            <Link
+                                to="/listing"
                                 className="px-8 py-4 border border-luxury-gold text-luxury-gold font-semibold text-sm uppercase tracking-widest hover:bg-luxury-gold hover:text-pure-black transition-all duration-300"
                             >
                                 View Properties
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -219,7 +219,7 @@ const PropertyDetails = () => {
             </div>
 
             {/* Introductory Content */}
-            <div className="section-padding py-24">
+            <div className="section-padding py-16 md:py-24">
                 <div className="container-luxury grid grid-cols-1 xl:grid-cols-3 gap-16">
                     <div className="xl:col-span-2" ref={contentRef}>
                         {/* Breadcrumb */}
@@ -245,22 +245,22 @@ const PropertyDetails = () => {
                                 <p className="text-lg md:text-xl font-display text-white">{property.price}</p>
                             </div>
                             <div>
-                                <p className="text-[10px] uppercase tracking-widest text-luxury-beige/50 mb-2">Property Type</p>
+                                <p className="text-[10px] uppercase tracking-widest text-luxury-gold mb-2">Property Type</p>
                                 <p className="text-base md:text-lg font-display text-white">{property.type}</p>
                             </div>
                             <div>
-                                <p className="text-[10px] uppercase tracking-widest text-luxury-beige/50 mb-2">Listing Status</p>
+                                <p className="text-[10px] uppercase tracking-widest text-luxury-gold mb-2">Listing Status</p>
                                 <div className="flex items-center gap-2">
                                     <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold animate-pulse"></span>
                                     <p className="text-base md:text-lg font-display text-white">{property.status}</p>
                                 </div>
                             </div>
                             <div>
-                                <p className="text-[10px] uppercase tracking-widest text-luxury-beige/50 mb-2">Region</p>
+                                <p className="text-[10px] uppercase tracking-widest text-luxury-gold mb-2">Region</p>
                                 <p className="text-base md:text-lg font-display text-white">{property.region}</p>
                             </div>
                             <div>
-                                <p className="text-[10px] uppercase tracking-widest text-luxury-beige/50 mb-2">Client Rating</p>
+                                <p className="text-[10px] uppercase tracking-widest text-luxury-gold mb-2">Client Rating</p>
                                 <div className="flex items-center gap-2">
                                     <span className="text-luxury-gold">★</span>
                                     <p className="text-base md:text-lg font-display text-white">{property.rating} <span className="text-[10px] md:text-sm text-white/30">/ 5.0</span></p>
@@ -401,7 +401,7 @@ const PropertyDetails = () => {
 
 
             {/* CTA Section */}
-            <div className="section-padding py-16 md:py-32 bg-luxury-black">
+            <div className="section-padding py-16 md:py-24 bg-luxury-black">
                 <div className="container-luxury text-center">
                     <h2 className="text-3xl md:text-display-md mb-6 md:mb-8">Begin Your Journey</h2>
                     <p className="text-luxury-beige-light max-w-xl mx-auto mb-8 md:mb-12 text-sm md:text-base">
@@ -409,7 +409,7 @@ const PropertyDetails = () => {
                     </p>
                     <button
                         onClick={() => setIsBookingOpen(true)}
-                        className="px-8 md:px-16 py-4 md:py-6 bg-luxury-gold text-pure-black font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs transition-luxury hover:bg-pure-white hover:shadow-2xl hover:shadow-luxury-gold/30"
+                        className="px-8 md:px-16 py-4 md:py-6 bg-luxury-gold text-pure-black font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs transition-luxury hover:bg-luxury-off-white hover:text-luxury-black hover:shadow-2xl hover:shadow-luxury-gold/30"
                     >
                         Request Private Tour
                     </button>

@@ -104,13 +104,14 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
     useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = 'hidden'
+            if (window.lenis) window.lenis.stop()
         } else {
-            // Only unset if we're not also waiting for intro screen
-            // or other global states (though here we just unset)
             document.body.style.overflow = 'unset'
+            if (window.lenis) window.lenis.start()
         }
         return () => {
             document.body.style.overflow = 'unset'
+            if (window.lenis) window.lenis.start()
         }
     }, [isMenuOpen])
 
@@ -194,8 +195,6 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
         { label: 'CONTACT', path: '/#contact' },
     ]
 
-    const { isDark } = useTheme();
-
     return (
         <>
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex justify-between items-center max-w-[2560px] left-1/2 -translate-x-1/2 ${(isScrolled && !isMenuOpen)
@@ -207,7 +206,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                 <Link to="/" className="inline-block hover:opacity-80 transition-all duration-300">
                     <div className="relative w-40 h-12">
                         <img
-                            src={isDark ? "/For Dark Theme.svg" : "/For Light Theme.svg"}
+                            src={isDarkMode ? "/For Dark Theme.svg" : "/For Light Theme.svg"}
                             className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
                             alt="Logo"
                         />
@@ -218,7 +217,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                 <div className="flex items-center gap-3 sm:gap-4 md:gap-8 transition-all">
                     <div
                         ref={searchContainerRef}
-                        className={`relative flex items-center h-8 sm:h-10 transition-all duration-700 ease-in-out rounded-full ${(isScrolled && !isMenuOpen) ? 'mix-blend-normal text-luxury-off-white' : 'mix-blend-normal text-pure-white'} ${isInlineSearchOpen
+                        className={`relative flex items-center h-8 sm:h-10 transition-all duration-700 ease-in-out rounded-full ${isInlineSearchOpen || (isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : ''} ${isInlineSearchOpen
                             ? `w-[calc(100vw-5rem)] xs:w-48 sm:w-64 md:w-72 border px-3 sm:px-4 shadow-2xl ${isScrolled && !isMenuOpen ? 'bg-luxury-black border-luxury-gold/30' : 'bg-luxury-black/95 border-luxury-gold/60'}`
                             : 'w-8 sm:w-10 bg-transparent border-transparent'
                             }`}
@@ -239,7 +238,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                             onKeyDown={handleKeyDown}
                             placeholder="Search estates..."
                             className={`flex-1 bg-transparent border-none outline-none text-xs sm:text-sm font-light tracking-wide placeholder:opacity-50 transition-all duration-700 ${isInlineSearchOpen ? 'opacity-100 pointer-events-auto ml-2' : 'opacity-0 pointer-events-none w-0'
-                                } ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white placeholder:text-luxury-off-white/50' : 'text-pure-white placeholder:text-pure-white/40'} pr-6`}
+                                } text-luxury-off-white placeholder:text-luxury-off-white/50 pr-6`}
                         />
 
                         {isInlineSearchOpen && searchQuery && (
@@ -249,7 +248,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                                     searchInputRef.current?.focus()
                                     setSuggestions([])
                                 }}
-                                className={`absolute right-3 top-1/2 -translate-y-1/2 transition-colors p-1 hover:text-luxury-gold ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white/40' : 'text-pure-white/40'}`}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors p-1 hover:text-luxury-gold text-luxury-off-white/40"
                                 title="Clear Search"
                             >
                                 <X size={14} className="sm:size-5" strokeWidth={2} />
@@ -264,14 +263,14 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                                         <button
                                             key={p.id}
                                             onClick={() => handleSuggestionClick(p.id)}
-                                            className="w-full text-left p-3 rounded-xl hover:bg-pure-white/5 group transition-all duration-300"
+                                            className="w-full text-left p-3 rounded-xl hover:bg-luxury-gold/10 group transition-all duration-300"
                                         >
-                                            <p className="text-pure-white text-xs font-medium group-hover:text-luxury-gold transition-colors truncate">
+                                            <p className="text-luxury-off-white text-xs font-medium group-hover:text-luxury-gold transition-colors truncate">
                                                 {p.title}
                                             </p>
                                             <div className="flex items-center gap-1.5 mt-0.5">
                                                 <MapPin size={10} className="text-luxury-gold/50" />
-                                                <p className="text-[10px] text-pure-white/40 truncate">
+                                                <p className="text-[10px] text-luxury-off-white/40 truncate">
                                                     {p.location}
                                                 </p>
                                             </div>
