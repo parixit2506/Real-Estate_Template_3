@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
 
 const IntroScreen = ({ onEnter }) => {
     const screenRef = useRef(null)
@@ -8,44 +7,15 @@ const IntroScreen = ({ onEnter }) => {
     const titleRef = useRef(null)
     const subRef = useRef(null)
 
+    // Using pure CSS Animations for the critical path entry to boost Lighthouse scores
+    // This removes GSAP blocking from the first paint entirely.
     useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 2 } })
-
-        // Responsive tracking for GSAP to match refined Tailwind breakpoints
-        const width = window.innerWidth
-        let targetTracking = '0.2em'
-        if (width >= 1536) targetTracking = '0.7em'
-        else if (width >= 1280) targetTracking = '0.6em'
-        else if (width >= 1024) targetTracking = '0.4em'
-        else if (width >= 768) targetTracking = '0.25em'
-        else if (width >= 640) targetTracking = '0.1em'
-
-        // Intro Entrance
-        tl.fromTo(titleRef.current,
-            { y: 80, opacity: 0, letterSpacing: '0.01em', scale: 0.98 },
-            {
-                y: 0,
-                opacity: 1,
-                letterSpacing: targetTracking,
-                scale: 1,
-                duration: 2.5,
-                ease: 'expo.out',
-                clearProps: 'letterSpacing' // Let Tailwind handle it after animation
-            }
-        )
-            .fromTo(subRef.current,
-                { opacity: 0 },
-                { opacity: 1, duration: 2 },
-                '-=1.5'
-            )
-            .fromTo(buttonRef.current,
-                { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.5 },
-                '-=1'
-            )
+        // Animation handled by Tailwind/CSS classes on render
     }, [])
 
-    const handleExit = () => {
+    const handleExit = async () => {
+        // Dynamic import GSAP only when it's time to exit for the fancy transition
+        const { default: gsap } = await import('gsap')
         const tl = gsap.timeline({
             onComplete: onEnter,
             defaults: { ease: 'power4.inOut', duration: 1.5 }
@@ -72,7 +42,7 @@ const IntroScreen = ({ onEnter }) => {
                 <div className="mb-4 md:mb-6 overflow-hidden">
                     <h1
                         ref={titleRef}
-                        className="text-[clamp(0.9rem,6vw,5rem)] font-display uppercase text-luxury-gold tracking-[0.2em] sm:tracking-[0.1em] md:tracking-[0.25em] lg:tracking-[0.4em] xl:tracking-[0.6em] 2xl:tracking-[0.7em] leading-none"
+                        className="text-[clamp(0.9rem,6vw,5rem)] font-display uppercase text-luxury-gold tracking-[0.2em] sm:tracking-[0.1em] md:tracking-[0.25em] lg:tracking-[0.4em] xl:tracking-[0.6em] 2xl:tracking-[0.7em] leading-none animate-intro-title"
                     >
                         AuraProperty
                     </h1>
@@ -81,7 +51,7 @@ const IntroScreen = ({ onEnter }) => {
                 <div className="mb-8 md:mb-16 overflow-hidden">
                     <p
                         ref={subRef}
-                        className="text-luxury-off-white/40 uppercase tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.4em] text-[8px] sm:text-[10px] md:text-xs 2xl:text-sm"
+                        className="text-luxury-off-white/40 uppercase tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.4em] text-[8px] sm:text-[10px] md:text-xs 2xl:text-sm animate-intro-fade"
                     >
                         Exquisite Global Estates Portfolio
                     </p>
@@ -90,7 +60,7 @@ const IntroScreen = ({ onEnter }) => {
                 <button
                     ref={buttonRef}
                     onClick={handleExit}
-                    className="group relative inline-flex items-center justify-center px-6 py-3 md:px-12 md:py-5 border border-luxury-gold/30 hover:border-luxury-gold transition-luxury"
+                    className="group relative inline-flex items-center justify-center px-6 py-3 md:px-12 md:py-5 border border-luxury-gold/30 hover:border-luxury-gold transition-luxury animate-intro-up"
                 >
                     <span className="relative z-10 text-[8px] sm:text-[10px] md:text-xs 2xl:text-sm uppercase tracking-[0.2em] md:tracking-[0.5em] text-luxury-gold font-bold transition-luxury group-hover:text-luxury-off-white">
                         Enter Experience
@@ -100,7 +70,13 @@ const IntroScreen = ({ onEnter }) => {
             </div>
 
             {/* Background Texture/Grain Overlay */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-luxury-gold/5 mix-blend-overlay" />
+            <div
+                className="absolute inset-0 opacity-[0.02] pointer-events-none"
+                style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+                }}
+            />
         </div>
     )
 }

@@ -14,6 +14,9 @@ const Hero = () => {
     const imageRef = useRef(null)
     const { scrollToId } = useSmoothScroll()
 
+    // Robust mobile detection to prevent 18MB video load for Lighthouse performance
+    const isMobile = typeof window !== 'undefined' ? window.matchMedia("(max-width: 1024px)").matches : false
+
     useEffect(() => {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
@@ -37,7 +40,7 @@ const Hero = () => {
             .fromTo(
                 imageRef.current,
                 { scale: 1.4, opacity: 0 },
-                { scale: 1.2, opacity: 1, duration: 1.4 },
+                { scale: isMobile ? 1 : 1.2, opacity: 1, duration: 1.4 },
                 '-=1.2'
             )
 
@@ -52,22 +55,32 @@ const Hero = () => {
                 scrub: true,
             },
         })
-    }, [])
+    }, [isMobile])
 
     return (
         <section id="home" className="relative h-screen flex items-center justify-center bg-pure-black overflow-hidden">
-            {/* Background Image Container */}
+            {/* Background Image/Video Container */}
             <div className="absolute inset-0 z-0">
-                <video
-                    ref={imageRef}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover scale-[1.2] will-change-transform"
-                >
-                    <source src="/assets/110923-689949643.mp4" type="video/mp4" />
-                </video>
+                {!isMobile ? (
+                    <video
+                        ref={imageRef}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover scale-[1.2] will-change-transform"
+                    >
+                        <source src="/assets/110923-689949643.mp4" type="video/mp4" />
+                    </video>
+                ) : (
+                    <img
+                        ref={imageRef}
+                        src="/properties/property1.jpg"
+                        alt="Luxury Estate"
+                        className="w-full h-full object-cover scale-[1.1] opacity-60 will-change-transform"
+                        style={{ objectPosition: 'center 20%' }}
+                    />
+                )}
                 {/* Dark Overlay for readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-pure-black/60 via-pure-black/40 to-pure-black/70 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-pure-black/20 pointer-events-none"></div>

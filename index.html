@@ -4,19 +4,40 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/Fevicon.svg" />
+
+  <!-- Performance Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Fast-loading Essential Fonts (400, 700) -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet">
+  </noscript>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0A0A0A" />
   <meta name="description"
     content="Discover extraordinary luxury estates with Aura Property. Carefully curated collection of the world's most exclusive properties where luxury meets lifestyle." />
   <title>Aura Property | Exclusive Luxury Real Estate & Global Estates</title>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Static Splash for near-instant FCP -->
+    <div id="html-splash"
+      style="position:fixed;inset:0;background:#0A0A0A;display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.5s ease-out;">
+      <h1
+        style="color:#C9A961;font-family:'Playfair Display',serif;letter-spacing:0.4em;text-transform:uppercase;font-size:3rem;text-align:center;">
+        AuraProperty</h1>
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
