@@ -18,7 +18,7 @@
 
 :root.light {
   --theme-luxury-black: #F5F1ED;
-  --theme-luxury-charcoal: #EAE6DF;
+  --theme-luxury-charcoal: #E3DED7;
   --theme-luxury-charcoal-light: #D4C5B0;
   --theme-luxury-beige: #2A2A2A;
   --theme-luxury-beige-light: #1A1A1A;
@@ -26,7 +26,7 @@
   --theme-luxury-cream: #FFFFFF;
   --theme-luxury-gold: #AB8841;
   --theme-luxury-gold-light: #C19E5A;
-  --theme-white: #0A0A0A;
+  --theme-white: #000000;
   --theme-black: #F5F1ED;
   --theme-pure-white: #ffffff;
   --theme-pure-black: #000000;
@@ -238,6 +238,22 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-luxury-black;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-luxury-gold/20 rounded-full transition-colors;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-luxury-gold/40;
+  }
 }
 
 /* Luxury Map Styles */
@@ -273,17 +289,49 @@
 }
 
 @keyframes intro-title {
-  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
+
 @keyframes intro-fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes intro-up {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-intro-title { animation: intro-title 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-.animate-intro-fade { animation: intro-fade 2s ease-out 0.8s forwards; opacity: 0; }
-.animate-intro-up { animation: intro-up 1.5s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards; opacity: 0; }
+
+.animate-intro-title {
+  animation: intro-title 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animate-intro-fade {
+  animation: intro-fade 2s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.animate-intro-up {
+  animation: intro-up 1.5s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+  opacity: 0;
+}

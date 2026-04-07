@@ -104,48 +104,48 @@ const RepresentationPackages = () => {
         const ctx = gsap.context(() => {
             // Headers Animation
             gsap.fromTo(headerRef.current.children,
-                { y: 50, opacity: 0 },
+                { y: 30, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: "power3.out",
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: headerRef.current,
-                        start: "top 80%",
+                        start: "top 90%",
                     }
                 }
             );
 
             // Toggle Animation
             gsap.fromTo(toggleRef.current,
-                { y: 30, opacity: 0 },
+                { y: 20, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 1,
-                    delay: 0.4,
-                    ease: "power3.out",
+                    duration: 0.8,
+                    delay: 0.2,
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: headerRef.current,
-                        start: "top 80%",
+                        start: "top 90%",
                     }
                 }
             );
 
             // Cards Animation
             gsap.fromTo(cardsRef.current,
-                { y: 100, opacity: 0 },
+                { y: 40, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 1.2,
-                    stagger: 0.2,
-                    ease: "power3.out",
+                    duration: 1,
+                    stagger: 0.15,
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: "top 70%",
+                        start: "top 85%",
                     }
                 }
             );
@@ -226,11 +226,11 @@ const RepresentationPackages = () => {
                                         <h3 className={`text-lg tracking-widest font-sans mb-3 lg:mb-2 uppercase ${pkg.highlight ? 'text-luxury-gold' : 'text-luxury-off-white'}`}>
                                             {pkg.name}
                                         </h3>
-                                        <p className="text-white/60 text-sm font-light tracking-wide">{pkg.description}</p>
+                                        <p className="text-luxury-off-white/70 text-sm font-normal tracking-wide">{pkg.description}</p>
                                     </div>
 
                                     <div className="mb-10 lg:mb-8 min-h-[5rem] lg:min-h-0 pb-8 lg:pb-6 border-b border-white/10">
-                                        <div className="text-[10px] xl:text-xs lg:tracking-wider xl:tracking-widest text-luxury-gold/80 mb-2 uppercase">
+                                        <div className="text-[10px] xl:text-xs lg:tracking-wider xl:tracking-widest text-luxury-gold mb-2 uppercase font-bold">
                                             {pkg.pricePrefix}
                                         </div>
                                         <div className="flex items-baseline gap-2">
@@ -238,13 +238,13 @@ const RepresentationPackages = () => {
                                                 {displayPrice}
                                             </div>
                                             {displayPrice !== 'Custom Pricing' && (
-                                                <div className="text-xs text-white/40 tracking-wide">
+                                                <div className="text-xs text-luxury-off-white/50 tracking-wide font-medium">
                                                     /{billingCycle === 'monthly' ? 'mo' : 'yr'}
                                                 </div>
                                             )}
                                         </div>
                                         {pkg.priceSuffix && (
-                                            <div className="text-xs tracking-wide text-white/40 mt-1">
+                                            <div className="text-xs tracking-wide text-luxury-off-white/50 mt-1 font-medium">
                                                 {pkg.priceSuffix}
                                             </div>
                                         )}
@@ -252,8 +252,8 @@ const RepresentationPackages = () => {
 
                                     <ul className="space-y-4 md:space-y-5 lg:space-y-3 mb-12 lg:mb-8 flex-grow">
                                         {pkg.features.map((feature, idx) => (
-                                            <li key={idx} className={`text-sm font-light flex items-start leading-relaxed ${feature.included ? 'text-white/80' : 'text-white/20'}`}>
-                                                <span className={`mr-4 mt-1 flex-shrink-0 ${feature.included ? 'text-luxury-gold' : 'text-white/20'}`}>
+                                            <li key={idx} className={`text-sm font-normal flex items-start leading-relaxed ${feature.included ? 'text-luxury-off-white/90' : 'text-luxury-off-white/30'}`}>
+                                                <span className={`mr-4 mt-1 flex-shrink-0 ${feature.included ? 'text-luxury-gold' : 'text-luxury-off-white/30'}`}>
                                                     {feature.included ? <Check size={14} /> : <X size={14} />}
                                                 </span>
                                                 <span className="flex-1">{feature.name}</span>

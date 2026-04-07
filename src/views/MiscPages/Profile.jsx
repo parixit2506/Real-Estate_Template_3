@@ -261,7 +261,7 @@ const Profile = () => {
                             <h3 className="text-luxury-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 flex items-center gap-3">
                                 <span className="w-8 h-px bg-luxury-gold"></span> Advisor Biography
                             </h3>
-                            <p className="text-luxury-beige-light leading-relaxed text-sm sm:text-base font-light max-w-2xl italic">
+                            <p className="text-luxury-off-white/80 leading-relaxed text-sm sm:text-base font-normal max-w-2xl">
                                 "{user.bio}"
                             </p>
                         </div>
@@ -536,12 +536,12 @@ const Profile = () => {
                         className="absolute inset-0 bg-luxury-black/95 backdrop-blur-sm"
                         onClick={closeInquiryDetail}
                     />
-                    <div className="relative w-full max-w-2xl bg-luxury-charcoal border border-white/10 shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+                    <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-luxury-charcoal border border-white/10 shadow-2xl animate-in fade-in zoom-in duration-300 custom-scrollbar">
                         {/* Status Bar */}
-                        <div className="h-1 bg-luxury-gold" />
+                        <div className="h-1 bg-luxury-gold sticky top-0 z-10" />
 
                         <div className="p-6 sm:p-10">
-                            <div className="flex justify-between items-start mb-10">
+                            <div className="flex justify-between items-start mb-6 sm:mb-10">
                                 <div>
                                     <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold mb-2 block">
                                         {selectedInquiry.type}
@@ -556,8 +556,8 @@ const Profile = () => {
                                 </button>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10 pb-10 border-b border-white/5">
-                                <div className="space-y-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-10 pb-6 sm:pb-10 border-b border-white/5">
+                                <div className="space-y-4 sm:space-y-6">
                                     <div className="flex items-start gap-4">
                                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                                             <User size={14} className="text-luxury-gold" />
@@ -589,7 +589,7 @@ const Profile = () => {
                                     )}
                                 </div>
 
-                                <div className="space-y-6">
+                                <div className="space-y-4 sm:space-y-6">
                                     <div className="flex items-start gap-4">
                                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                                             <Calendar size={14} className="text-luxury-gold" />
@@ -626,12 +626,12 @@ const Profile = () => {
                                 </div>
                             </div>
 
-                            <div className="mb-10">
+                            <div className="mb-8 sm:mb-10">
                                 <p className="text-[9px] uppercase tracking-widest text-white/40 mb-4 flex items-center gap-2">
                                     <MessageSquare size={12} className="text-luxury-gold" />
                                     Client Message
                                 </p>
-                                <div className="p-6 bg-white/[0.03] border border-white/5 text-luxury-off-white/80 italic leading-relaxed text-sm">
+                                <div className="p-4 sm:p-6 bg-white/[0.03] border border-white/5 text-luxury-off-white font-normal leading-relaxed text-sm">
                                     "{selectedInquiry.message || 'No message provided'}"
                                 </div>
                             </div>

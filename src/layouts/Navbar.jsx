@@ -238,7 +238,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                             onChange={handleInlineSearchChange}
                             onKeyDown={handleKeyDown}
                             placeholder="Search estates..."
-                            className={`flex-1 bg-transparent border-none outline-none text-xs sm:text-sm font-light tracking-wide placeholder:opacity-50 transition-all duration-700 ${isInlineSearchOpen ? 'opacity-100 pointer-events-auto ml-2' : 'opacity-0 pointer-events-none w-0'
+                            className={`flex-1 bg-transparent border-none outline-none text-xs sm:text-sm font-normal tracking-wide placeholder:opacity-50 transition-all duration-700 ${isInlineSearchOpen ? 'opacity-100 pointer-events-auto ml-2' : 'opacity-0 pointer-events-none w-0'
                                 } text-luxury-off-white placeholder:text-luxury-off-white/50 pr-6`}
                         />
 

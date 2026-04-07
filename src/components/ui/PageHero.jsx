@@ -78,7 +78,7 @@ const PageHero = ({
                     )}
 
                     {/* Main Title */}
-                    <h1 className="hero-content-node text-4xl sm:text-5xl md:text-7xl font-display font-light text-pure-white mb-6 leading-tight drop-shadow-xl">
+                    <h1 className="hero-content-node text-4xl sm:text-5xl md:text-7xl font-display font-normal text-pure-white mb-6 leading-tight drop-shadow-xl">
                         {title}
                     </h1>
 

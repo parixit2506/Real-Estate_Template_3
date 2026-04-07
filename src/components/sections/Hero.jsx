@@ -98,7 +98,7 @@ const Hero = () => {
 
                     <p
                         ref={subtitleRef}
-                        className="text-base md:text-xl lg:text-2xl text-pure-white/90 max-w-2xl mx-auto leading-relaxed font-light will-change-[transform,opacity]"
+                        className="text-base md:text-xl lg:text-2xl text-pure-white/90 max-w-2xl mx-auto leading-relaxed font-normal will-change-[transform,opacity]"
                     >
                         Curated collection of the world&apos;s most exclusive properties.
                         Where luxury meets lifestyle.

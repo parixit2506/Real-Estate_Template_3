@@ -172,7 +172,7 @@ const SearchOverlay = ({ isOpen, onClose, searchQuery, setSearchQuery }) => {
 							</div>
 						) : searchQuery.length > 1 ? (
 							<div className="py-12 text-center px-4">
-								<p className="text-white/40 text-lg italic font-light break-words">
+								<p className="text-white/40 text-lg italic font-normal break-words">
 									No properties found for <span className="text-white/60 break-all">"{searchQuery}"</span>
 								</p>
 							</div>
@@ -185,7 +185,7 @@ const SearchOverlay = ({ isOpen, onClose, searchQuery, setSearchQuery }) => {
 											<button
 												key={link}
 												onClick={() => setSearchQuery(link.split(' ')[0])}
-												className="text-white/60 hover:text-white transition-colors text-base sm:text-lg font-light text-left flex items-center gap-3 group"
+												className="text-white/60 hover:text-white transition-colors text-base sm:text-lg font-normal text-left flex items-center gap-3 group"
 											>
 												<span className="w-1.5 h-1.5 rounded-full bg-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity" />
 												{link}
