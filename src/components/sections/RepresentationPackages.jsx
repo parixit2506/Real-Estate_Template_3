@@ -151,7 +151,15 @@ const RepresentationPackages = () => {
             );
         }, sectionRef);
 
-        return () => ctx.revert();
+        // Force a refresh after a short delay to ensure layout is settled
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+
+        return () => {
+            ctx.revert();
+            clearTimeout(timer);
+        };
     }, []);
 
     return (
@@ -172,21 +180,21 @@ const RepresentationPackages = () => {
                 </div>
 
                 {/* Billing Toggle */}
-                <div ref={toggleRef} className="flex justify-center items-center gap-4 mb-16 md:mb-24">
-                    <span className={`text-sm uppercase tracking-widest transition-colors duration-300 ${billingCycle === 'monthly' ? 'text-luxury-gold' : 'text-white/40'}`}>
+                <div ref={toggleRef} className="flex justify-center items-center gap-2 xs:gap-4 mb-16 md:mb-24">
+                    <span className={`text-[10px] xs:text-sm uppercase tracking-wider xs:tracking-widest transition-colors duration-300 ${billingCycle === 'monthly' ? 'text-luxury-gold' : 'text-white/40'}`}>
                         Monthly
                     </span>
                     <button
                         onClick={() => setBillingCycle(prev => prev === 'monthly' ? 'yearly' : 'monthly')}
-                        className="relative w-16 h-8 bg-luxury-charcoal/20 backdrop-blur-md border border-luxury-gold/20 rounded-full p-1 transition-colors duration-300 group hover:bg-luxury-charcoal/30"
+                        className="relative w-14 xs:w-16 h-7 xs:h-8 flex-shrink-0 bg-luxury-charcoal/20 backdrop-blur-md border border-luxury-gold/20 rounded-full p-1 transition-colors duration-300 group hover:bg-luxury-charcoal/30"
                         aria-label={`Switch to ${billingCycle === 'monthly' ? 'yearly' : 'monthly'} billing cycle`}
                     >
                         <div
-                            className={`w-6 h-6 bg-luxury-gold rounded-full shadow-lg shadow-pure-black/40 transition-transform duration-500 ease-luxury ${billingCycle === 'yearly' ? 'translate-x-8' : 'translate-x-0'}`}
+                            className={`w-5 xs:w-6 h-5 xs:h-6 bg-luxury-gold rounded-full shadow-lg shadow-pure-black/40 transition-transform duration-500 ease-luxury ${billingCycle === 'yearly' ? 'translate-x-7 xs:translate-x-8' : 'translate-x-0'}`}
                         />
                     </button>
-                    <div className="flex items-center gap-3">
-                        <span className={`text-sm uppercase tracking-widest transition-colors duration-300 ${billingCycle === 'yearly' ? 'text-luxury-gold' : 'text-white/40'}`}>
+                    <div className="flex items-center gap-1.5 xs:gap-3">
+                        <span className={`text-[10px] xs:text-sm uppercase tracking-wider xs:tracking-widest transition-colors duration-300 ${billingCycle === 'yearly' ? 'text-luxury-gold' : 'text-white/40'}`}>
                             Yearly
                         </span>
                         <span className="bg-luxury-gold/20 text-luxury-gold text-[10px] px-2 py-0.5 rounded-full border border-luxury-gold/30 tracking-wider">
@@ -208,12 +216,12 @@ const RepresentationPackages = () => {
                         return (
                             <div
                                 key={pkg.name}
-                                className="w-screen flex-shrink-0 snap-center px-6 md:w-auto md:px-0"
+                                className="w-full flex-shrink-0 snap-center px-4 xs:px-6 md:w-auto md:px-0"
                             >
                                 <div
                                     ref={el => cardsRef.current[index] = el}
                                     className={`
-                                        relative flex flex-col h-full p-8 md:p-10 lg:p-6 xl:p-12 border transition-all duration-700 ease-luxury group shadow-2xl shadow-pure-black/15
+                                        relative flex flex-col h-full p-6 xs:p-8 md:p-10 lg:p-6 xl:p-12 border transition-all duration-700 ease-luxury group shadow-2xl shadow-pure-black/15
                                         ${isActive ? 'opacity-100 scale-100' : 'md:opacity-100 md:scale-100 opacity-60 scale-[0.92]'}
                                         ${pkg.highlight
                                             ? 'border-luxury-gold/50 bg-luxury-charcoal border shadow-2xl shadow-luxury-gold/30'

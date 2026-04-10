@@ -168,6 +168,21 @@ const Profile = () => {
             )
     }, [])
 
+    // Lock scroll and stop Lenis when modal is open
+    useEffect(() => {
+        if (isDetailModalOpen) {
+            document.body.style.overflow = 'hidden'
+            if (window.lenis) window.lenis.stop()
+        } else {
+            document.body.style.overflow = 'unset'
+            if (window.lenis) window.lenis.start()
+        }
+        return () => {
+            document.body.style.overflow = 'unset'
+            if (window.lenis) window.lenis.start()
+        }
+    }, [isDetailModalOpen])
+
     return (
         <div className="bg-luxury-black min-h-screen text-luxury-off-white">
             {/* Header / Profile Cover */}
@@ -536,7 +551,7 @@ const Profile = () => {
                         className="absolute inset-0 bg-luxury-black/95 backdrop-blur-sm"
                         onClick={closeInquiryDetail}
                     />
-                    <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-luxury-charcoal border border-white/10 shadow-2xl animate-in fade-in zoom-in duration-300 custom-scrollbar">
+                    <div data-lenis-prevent className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-luxury-charcoal border border-white/10 shadow-2xl animate-in fade-in zoom-in duration-300 custom-scrollbar">
                         {/* Status Bar */}
                         <div className="h-1 bg-luxury-gold sticky top-0 z-10" />
 

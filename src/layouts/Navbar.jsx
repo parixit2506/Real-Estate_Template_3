@@ -204,7 +204,7 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
 
                 {/* Left: Logo */}
                 <Link to="/" className="inline-block hover:opacity-80 transition-all duration-300">
-                    <div className="relative w-40 h-12">
+                    <div className="relative w-24 xs:w-32 sm:w-40 h-10 sm:h-12">
                         <img
                             src={isDarkMode ? "/For Dark Theme.svg" : "/For Light Theme.svg"}
                             className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
@@ -214,11 +214,11 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                 </Link>
 
                 {/* Right: Search & Menu Trigger */}
-                <div className={`flex items-center gap-3 sm:gap-4 md:gap-8 transition-all ${(!isScrolled && !isMenuOpen) ? 'mix-blend-difference' : ''}`}>
+                <div className={`flex items-center gap-1 xs:gap-3 sm:gap-4 md:gap-8 transition-all ${(!isScrolled && !isMenuOpen) ? 'mix-blend-difference' : ''}`}>
                     <div
                         ref={searchContainerRef}
                         className={`relative flex items-center h-8 sm:h-10 transition-all duration-700 ease-in-out rounded-full ${isInlineSearchOpen || (isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : ''} ${isInlineSearchOpen
-                            ? `w-[calc(100vw-5rem)] xs:w-48 sm:w-64 md:w-72 border px-3 sm:px-4 shadow-2xl ${isScrolled && !isMenuOpen ? 'bg-luxury-black border-luxury-gold/30' : 'bg-luxury-black/95 border-luxury-gold/60'}`
+                            ? `w-[calc(100vw-8rem)] xs:w-48 sm:w-64 md:w-72 border px-3 sm:px-4 shadow-2xl ${isScrolled && !isMenuOpen ? 'bg-luxury-black border-luxury-gold/30' : 'bg-luxury-black/95 border-luxury-gold/60'}`
                             : 'w-8 sm:w-10 bg-transparent border-transparent'
                             }`}
                     >
@@ -286,41 +286,41 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                     {/* User Login Icon */}
                     <button
                         onClick={() => navigate('/login')}
-                        className={`hover:text-luxury-gold transition-colors duration-300 group relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
+                        className={`hover:text-luxury-gold transition-colors duration-300 group relative w-8 h-8 xs:w-10 xs:h-10 sm:w-11 sm:h-11 flex items-center justify-center ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
                         aria-label="Login"
                     >
-                        <User size={18} className="sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
-                        <span className="absolute -top-1 -right-1 transition-opacity duration-300">
-                            <Zap size={10} className="fill-luxury-gold text-luxury-gold" />
+                        <User size={16} className="xs:w-[18px] xs:h-[18px] sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
+                        <span className="absolute -top-0.5 -right-0.5 transition-opacity duration-300">
+                            <Zap size={8} className="fill-luxury-gold text-luxury-gold sm:size-[10px]" />
                         </span>
                     </button>
 
                     {/* Theme Toggle Icon */}
                     <button
                         onClick={toggleTheme}
-                        className={`hover:text-luxury-gold transition-colors duration-300 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
+                        className={`hover:text-luxury-gold transition-colors duration-300 w-8 h-8 xs:w-10 xs:h-10 sm:w-11 sm:h-11 flex items-center justify-center ${(isScrolled && !isMenuOpen) ? 'text-luxury-off-white' : 'text-pure-white'}`}
                         aria-label="Toggle Theme"
                     >
                         {isDarkMode ? (
-                            <Sun size={18} className="sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
+                            <Sun size={16} className="xs:w-[18px] xs:h-[18px] sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
                         ) : (
-                            <Moon size={18} className="sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
+                            <Moon size={16} className="xs:w-[18px] xs:h-[18px] sm:w-[22px] sm:h-[22px]" strokeWidth={1.5} />
                         )}
                     </button>
 
 
                     <button
                         onClick={toggleMenu}
-                        className="group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 cursor-pointer"
+                        className="group flex items-center justify-center w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 cursor-pointer"
                         aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
                     >
                         {isMenuOpen ? (
-                            <div className="relative w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center transition-transform duration-500 group-hover:rotate-90">
-                                <span className={`absolute w-6 sm:w-8 h-[2px] rotate-45 ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>
-                                <span className={`absolute w-6 sm:w-8 h-[2px] -rotate-45 ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>
+                            <div className="relative w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 flex justify-center items-center transition-transform duration-500 group-hover:rotate-90">
+                                <span className={`absolute w-5 xs:w-6 sm:w-8 h-[2px] rotate-45 ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>
+                                <span className={`absolute w-5 xs:w-6 sm:w-8 h-[2px] -rotate-45 ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>
                             </div>
                         ) : (
-                            <div className="flex flex-col gap-[5px] sm:gap-[6px] w-6 sm:w-8 items-end">
+                            <div className="flex flex-col gap-[4px] xs:gap-[5px] sm:gap-[6px] w-5 xs:w-6 sm:w-8 items-end">
                                 <span className={`w-full h-[2px] transition-all duration-300 group-hover:w-[75%] ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>
                                 <span className={`w-full h-[2px] transition-all duration-300 group-hover:w-full ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>
                                 <span className={`w-full h-[2px] transition-all duration-300 group-hover:w-[50%] ${(isScrolled && !isMenuOpen) ? 'bg-luxury-off-white' : 'bg-pure-white'}`}></span>

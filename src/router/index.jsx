@@ -78,6 +78,19 @@ const ScrollToHash = () => {
                 window.scrollTo(0, 0)
             }
         }
+
+        // Refresh ScrollTrigger on every route change to prevent blank sections
+        const refreshST = async () => {
+            try {
+                const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+                setTimeout(() => {
+                    ScrollTrigger.refresh();
+                }, 500); // Wait a bit longer for all components to mount
+            } catch (err) {
+                console.warn('ScrollTrigger refresh failed:', err);
+            }
+        };
+        refreshST();
     }, [pathname, hash, state])
 
     return null

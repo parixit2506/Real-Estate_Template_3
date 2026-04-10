@@ -212,7 +212,7 @@ const About = () => {
                 <div className="about-sections-container section-padding bg-luxury-black">
                     <div className="max-w-7xl mx-auto px-4">
 
-                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-50">
+                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16 md:mb-24 lg:mb-32">
                             <div ref={storyTextRef} className="space-y-6">
                                 <span className="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase block">
                                     Our Story
@@ -239,7 +239,7 @@ const About = () => {
                         </div>
 
                         {/* Mission & Vision */}
-                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div className="about-section grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                             <div className="relative h-[500px] rounded-sm overflow-hidden order-2 lg:order-1 will-change-transform">
                                 <div ref={missionImageRef} className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform">
                                     <img

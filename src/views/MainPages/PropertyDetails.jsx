@@ -401,7 +401,7 @@ const PropertyDetails = () => {
 
 
             {/* CTA Section */}
-            <div className="section-padding py-16 md:py-24 bg-luxury-black">
+            <div className="section-padding pt-4 pb-20 md:pt-0 lg:pt-4 lg:pb-26 bg-luxury-black">
                 <div className="container-luxury text-center">
                     <h2 className="text-3xl md:text-display-md mb-6 md:mb-8">Begin Your Journey</h2>
                     <p className="text-luxury-beige-light max-w-xl mx-auto mb-8 md:mb-12 text-sm md:text-base">
