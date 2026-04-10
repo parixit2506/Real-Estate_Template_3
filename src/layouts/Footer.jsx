@@ -25,9 +25,9 @@ const Footer = () => {
     ]
 
     const socialLinks = [
-        { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
-        { icon: <Twitter size={18} />, href: '#', label: 'Twitter' },
-        { icon: <Linkedin size={18} />, href: '#', label: 'LinkedIn' },
+        { icon: <Instagram size={18} />, href: 'https://www.instagram.com/drp_solution/', label: 'Instagram' },
+        { icon: <Twitter size={18} />, href: 'https://x.com/drpsolutions16', label: 'Twitter' },
+        { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/company/drpsolutions-tech', label: 'LinkedIn' },
         { icon: <Facebook size={18} />, href: '#', label: 'Facebook' },
     ]
 
@@ -61,6 +61,8 @@ const Footer = () => {
                                 <a
                                     key={index}
                                     href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label={social.label}
                                     className="w-12 h-12 rounded-full border border-luxury-charcoal-light flex items-center justify-center text-luxury-beige hover:border-luxury-gold hover:text-luxury-gold hover:bg-luxury-gold/5 transition-luxury group"
                                 >

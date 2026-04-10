@@ -364,12 +364,19 @@ const Navbar = ({ onSearchOpen, hasEntered, searchQuery, setSearchQuery }) => {
                         <div className={`space-y-4 md:space-y-6 ${isRTL ? 'text-left lg:text-right' : 'text-right lg:text-left'} translate-x-[-2px] sm:translate-x-0 lg:translate-x-0`}>
                             <h4 className="text-luxury-gold/50 text-[10px] 2xl:text-xs tracking-[0.4em] uppercase font-medium">Connect</h4>
                             <div className={`flex flex-col ${isRTL ? 'items-start lg:items-start' : 'items-end lg:items-start'} gap-3 text-[10px] sm:text-[10px] md:text-xs font-semibold tracking-[0.3em] text-pure-white/50`}>
-                                {['INSTAGRAM', 'LINKEDIN', 'FACEBOOK'].map((social) => (
-                                    <a key={social}
-                                        href="#"
+                                {[
+                                    { name: 'INSTAGRAM', href: 'https://www.instagram.com/drp_solution/' },
+                                    { name: 'TWITTER', href: 'https://x.com/drpsolutions16' },
+                                    { name: 'LINKEDIN', href: 'https://www.linkedin.com/company/drpsolutions-tech' },
+                                    { name: 'FACEBOOK', href: '#' }
+                                ].map((social) => (
+                                    <a key={social.name}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="hover:text-luxury-gold transition-all duration-500 relative group/social w-fit"
                                     >
-                                        {social}
+                                        {social.name}
                                         <span className={`absolute bottom-[-2px] ${isRTL ? 'right-0' : 'left-0'} w-0 h-[1px] bg-luxury-gold transition-all duration-500 group-hover/social:w-full`}></span>
                                     </a>
                                 ))}
