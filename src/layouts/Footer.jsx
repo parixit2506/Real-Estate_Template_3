@@ -150,7 +150,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
                     <div className="order-2 md:order-1">
                         <p className="text-luxury-beige-light/80 text-[10px] uppercase tracking-[0.25em] font-medium text-center md:text-left transition-luxury hover:text-luxury-beige-light">
-                            © {currentYear} LUXE Global Real Estate. All Rights Reserved.
+                            © {currentYear} DRP Solutions. All Rights Reserved.
                         </p>
                     </div>
 
